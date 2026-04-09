@@ -5,368 +5,249 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hướng dẫn sử dụng NAV TOOLS v1.0.0</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1f2937;
-            background: #f8fafc;
-            line-height: 1.7;
-            font-size: 15px;
-        }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #1f2937;
+        background: #f8fafc;
+        line-height: 1.7;
+        font-size: 15px;
+    }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #0b1326 0%, #1e3a5f 50%, #2563eb 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-        }
-        .header h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-        .header .subtitle {
-            font-size: 18px;
-            color: #93c5fd;
-            font-weight: 300;
-        }
-        .header .version {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-top: 16px;
-            backdrop-filter: blur(10px);
-        }
+    .header {
+        background: linear-gradient(135deg, #0b1326 0%, #1e3a5f 50%, #2563eb 100%);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+    }
+    .header h1 {
+        font-family: 'Manrope', sans-serif;
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+    }
+    .header .subtitle { font-size: 18px; color: #93c5fd; font-weight: 300; }
+    .header .version {
+        display: inline-block;
+        background: rgba(255,255,255,0.15);
+        padding: 4px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        margin-top: 16px;
+        backdrop-filter: blur(10px);
+    }
 
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 30px;
-        }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 30px; }
 
-        /* TOC */
-        .toc {
-            background: white;
-            border-radius: 16px;
-            padding: 30px 36px;
-            margin-bottom: 40px;
-            box-shadow: 0 1px 3px rgba(0,0,0,.08);
-            border: 1px solid #e2e8f0;
-        }
-        .toc h2 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 22px;
-            margin-bottom: 16px;
-            color: #0f172a;
-        }
-        .toc ol {
-            padding-left: 24px;
-        }
-        .toc li {
-            margin-bottom: 8px;
-        }
-        .toc a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .toc a:hover {
-            text-decoration: underline;
-        }
+    .top-warning {
+        background: linear-gradient(135deg, #fef3c7, #fde68a);
+        border: 2px solid #f59e0b;
+        border-radius: 16px;
+        padding: 20px 28px;
+        margin-bottom: 32px;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+        color: #78350f;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    .top-warning strong { color: #92400e; }
+    .top-warning a { color: #b45309; font-weight: 600; text-decoration: underline; }
+    .top-warning p { margin-bottom: 8px; }
+    .top-warning p:last-child { margin-bottom: 0; }
 
-        /* Sections */
-        .section {
-            background: white;
-            border-radius: 16px;
-            padding: 36px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,.08);
-            border: 1px solid #e2e8f0;
-        }
-        .section h2 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 26px;
-            color: #0f172a;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #3b82f6;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .section h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1e40af;
-            margin: 24px 0 12px;
-        }
-        .section h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #374151;
-            margin: 18px 0 8px;
-        }
-        .section p {
-            margin-bottom: 12px;
-        }
-        .section ul, .section ol {
-            margin-bottom: 14px;
-            padding-left: 24px;
-        }
-        .section li {
-            margin-bottom: 6px;
-        }
+    .toc {
+        background: white;
+        border-radius: 16px;
+        padding: 30px 36px;
+        margin-bottom: 40px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08);
+        border: 1px solid #e2e8f0;
+    }
+    .toc h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: 22px;
+        margin-bottom: 16px;
+        color: #0f172a;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #3b82f6;
+    }
+    .toc ol { padding-left: 24px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: #2563eb; text-decoration: none; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
 
-        /* Alerts */
-        .alert {
-            padding: 14px 20px;
-            border-radius: 10px;
-            margin: 14px 0;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .alert-warning {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            color: #92400e;
-        }
-        .alert-info {
-            background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            color: #1e40af;
-        }
-        .alert-success {
-            background: #dcfce7;
-            border-left: 4px solid #22c55e;
-            color: #166534;
-        }
-        .alert-danger {
-            background: #fee2e2;
-            border-left: 4px solid #ef4444;
-            color: #991b1b;
-        }
+    .section {
+        background: white;
+        border-radius: 16px;
+        padding: 36px 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08);
+        border: 1px solid #e2e8f0;
+    }
+    .section h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: 26px;
+        color: #0f172a;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #3b82f6;
+    }
+    .section h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1e40af;
+        margin: 24px 0 12px;
+    }
+    .section h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #374151;
+        margin: 18px 0 8px;
+    }
+    .section p { margin-bottom: 12px; }
+    .section ul, .section ol { margin-bottom: 14px; padding-left: 24px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: #2563eb; text-decoration: none; font-weight: 500; }
+    .section a:hover { text-decoration: underline; }
+    .section strong { color: #0f172a; }
+    .section hr {
+        border: none;
+        border-top: 1px solid #e2e8f0;
+        margin: 20px 0;
+    }
 
-        /* Code blocks */
-        code {
-            background: #f1f5f9;
-            padding: 2px 8px;
-            border-radius: 5px;
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 13px;
-            color: #dc2626;
-        }
-        pre {
-            background: #0f172a;
-            color: #e2e8f0;
-            padding: 16px 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 12px 0;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-        pre code {
-            background: none;
-            color: inherit;
-            padding: 0;
-        }
+    /* Screenshots */
+    .screenshot {
+        text-align: center;
+        margin: 24px 0;
+    }
+    .screenshot img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,.18);
+        border: 1px solid #e2e8f0;
+    }
+    .screenshot .caption {
+        font-size: 13px;
+        color: #64748b;
+        margin-top: 10px;
+        font-style: italic;
+    }
 
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 14px 0;
-            font-size: 14px;
-        }
-        th {
-            background: #f1f5f9;
-            font-weight: 600;
-            color: #475569;
-            text-align: left;
-            padding: 10px 14px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        td {
-            padding: 10px 14px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        tr:hover td {
-            background: #f8fafc;
-        }
+    .alert {
+        padding: 14px 20px;
+        border-radius: 10px;
+        margin: 14px 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .alert p { margin-bottom: 8px; }
+    .alert p:last-child { margin-bottom: 0; }
+    .alert-warning {
+        background: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        color: #92400e;
+    }
+    .alert-info {
+        background: #dbeafe;
+        border-left: 4px solid #3b82f6;
+        color: #1e40af;
+    }
+    .alert-success {
+        background: #dcfce7;
+        border-left: 4px solid #22c55e;
+        color: #166534;
+    }
+    .alert-danger {
+        background: #fee2e2;
+        border-left: 4px solid #ef4444;
+        color: #991b1b;
+    }
+    .alert strong { color: inherit; }
+    .alert code {
+        background: rgba(255,255,255,0.6);
+        color: inherit;
+    }
 
-        /* Images */
-        .screenshot {
-            text-align: center;
-            margin: 24px 0;
-        }
-        .screenshot img {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0,0,0,.18);
-            border: 1px solid #e2e8f0;
-        }
-        .screenshot .caption {
-            font-size: 13px;
-            color: #64748b;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        .screenshot-row {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: flex-start;
-            margin: 24px 0;
-            flex-wrap: wrap;
-        }
-        .screenshot-row .screenshot {
-            flex: 1;
-            min-width: 250px;
-            max-width: 380px;
-            margin: 0;
-        }
+    code {
+        background: #f1f5f9;
+        padding: 2px 8px;
+        border-radius: 5px;
+        font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+        font-size: 13px;
+        color: #dc2626;
+    }
+    pre {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 16px 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin: 12px 0;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    pre code {
+        background: none;
+        color: inherit;
+        padding: 0;
+    }
 
-        /* Steps */
-        .step {
-            display: flex;
-            gap: 14px;
-            margin: 14px 0;
-            align-items: flex-start;
-        }
-        .step-num {
-            flex-shrink: 0;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-        }
-        .step-content {
-            flex: 1;
-            padding-top: 4px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 14px;
+    }
+    th {
+        background: #f1f5f9;
+        font-weight: 600;
+        color: #475569;
+        text-align: left;
+        padding: 10px 14px;
+        border-bottom: 2px solid #e2e8f0;
+    }
+    td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #f1f5f9;
+        vertical-align: top;
+    }
+    tr:hover td { background: #f8fafc; }
+    td code {
+        font-size: 12px;
+        white-space: nowrap;
+    }
 
-        /* Feature cards */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin: 16px 0;
-        }
-        .feature-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 16px 20px;
-        }
-        .feature-card .icon {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
-        .feature-card .name {
-            font-weight: 600;
-            color: #1e40af;
-            margin-bottom: 4px;
-        }
-        .feature-card .desc {
-            font-size: 13px;
-            color: #64748b;
-        }
+    blockquote {
+        background: #f8fafc;
+        border-left: 4px solid #94a3b8;
+        padding: 12px 18px;
+        margin: 14px 0;
+        color: #475569;
+        border-radius: 6px;
+    }
 
-        /* Sidebar table */
-        .sidebar-table td:first-child {
-            text-align: center;
-            font-size: 20px;
-            width: 50px;
-        }
+    .footer {
+        text-align: center;
+        padding: 40px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
 
-        /* Error section */
-        .error-item {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 10px;
-            padding: 18px 22px;
-            margin: 14px 0;
-        }
-        .error-item h4 {
-            color: #dc2626;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-        .error-item p {
-            margin-bottom: 6px;
-        }
-        .error-item .fix {
-            color: #16a34a;
-            font-weight: 500;
-        }
-
-        /* Tips */
-        .tips-list {
-            list-style: none;
-            padding: 0;
-        }
-        .tips-list li {
-            padding: 10px 16px;
-            background: #f0f9ff;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border-left: 3px solid #0ea5e9;
-        }
-        .tips-list li::before {
-            content: "💡 ";
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px;
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-        /* Callout box */
-        .callout {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border: 1px solid #93c5fd;
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin: 20px 0;
-        }
-        .callout h4 {
-            color: #1e40af;
-            margin-bottom: 8px;
-        }
-
-        /* Print */
-        @media print {
-            body { background: white; font-size: 12px; }
-            .header { page-break-after: avoid; padding: 30px; }
-            .header h1 { font-size: 28px; }
-            .section { break-inside: avoid; page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; padding: 20px 24px; }
-            .screenshot img { box-shadow: none; max-width: 90%; }
-            .screenshot-row { break-inside: avoid; }
-            .feature-grid { grid-template-columns: 1fr 1fr; }
-        }
-    </style>
+    @media print {
+        body { background: white; font-size: 12px; }
+        .header { page-break-after: avoid; padding: 30px; }
+        .header h1 { font-size: 28px; }
+        .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+    }
+</style>
 </head>
 <body>
 
-<!-- ======== HEADER ======== -->
 <div class="header">
     <h1>📘 NAV TOOLS</h1>
     <div class="subtitle">Hướng Dẫn Sử Dụng — Video & Image Generator</div>
@@ -375,776 +256,866 @@
 
 <div class="container">
 
-<!-- ======== TOC ======== -->
+<div class="top-warning"><p><strong>Dành cho:</strong> Người dùng tạo video/ảnh AI hàng loạt tự động</p>
+<p>⚠️ <strong>ĐỌC TRƯỚC KHI CÀI:</strong> NAV TOOLS <strong>BẮT BUỘC</strong> cần tài khoản Google đã đăng ký Veo 3.1 tại <a href="https://labs.google/fx">labs.google/fx</a>. App <strong>KHÔNG tự cung cấp credit AI</strong> — credit trừ trên tài khoản Google của bạn. Đọc kỹ <strong><a href="#2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">Mục 2 — Yêu cầu tài khoản VEO 3.1</a></strong> trước khi tiếp tục.</p></div>
+
 <div class="toc">
-    <h2>📑 Mục lục</h2>
-    <ol>
-        <li><a href="#intro">Giới thiệu</a></li>
-        <li><a href="#install">Cài đặt & Khởi chạy</a></li>
-        <li><a href="#login">Đăng ký & Đăng nhập tài khoản app</a></li>
-        <li><a href="#google-account">Thêm tài khoản Google (bắt buộc)</a></li>
-        <li><a href="#interface">Giao diện chính</a></li>
-        <li><a href="#modes">Các chế độ tạo nội dung</a></li>
-        <li><a href="#account-mgmt">Quản lý tài khoản Google</a></li>
-        <li><a href="#troubleshoot">Xử lý sự cố thường gặp</a></li>
-        <li><a href="#tips">Mẹo sử dụng</a></li>
-        <li><a href="#workflow-char-video"><strong>⭐ Quy trình làm Video đồng nhất nhân vật</strong></a></li>
-    </ol>
+<h2 id="mục-lục">📑 MỤC LỤC</h2>
+<ol>
+<li><a href="#1-giới-thiệu">Giới thiệu</a></li>
+<li><a href="#2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">Yêu cầu tài khoản VEO 3.1 (Đọc trước khi cài)</a> ⭐</li>
+<li><a href="#3-cài-đặt-ứng-dụng-nav-tools">Cài đặt ứng dụng NAV TOOLS</a></li>
+<li><a href="#4-đăng-ký-đăng-nhập-nav-tools">Đăng ký &amp; Đăng nhập NAV TOOLS</a></li>
+<li><a href="#5-thêm-tài-khoản-google-vào-nav-tools">Thêm tài khoản Google vào NAV TOOLS</a> ⭐</li>
+<li><a href="#6-quick-start-task-đầu-tiên-trong-3-phút">Quick Start — Task đầu tiên trong 3 phút</a></li>
+<li><a href="#7-giao-diện-chính">Giao diện chính</a></li>
+<li><a href="#8-chi-tiết-6-chế-độ-tạo-nội-dung">Chi tiết 6 chế độ tạo nội dung</a></li>
+<li><a href="#9-tính-năng-tham-chiếu-nhân-vật-alias">Tính năng tham chiếu Nhân vật (Alias)</a></li>
+<li><a href="#10-điều-khiển-hàng-đợi-ghép-video">Điều khiển hàng đợi &amp; Ghép Video</a></li>
+<li><a href="#11-quản-lý-tài-khoản-google">Quản lý tài khoản Google</a></li>
+<li><a href="#12-xử-lý-sự-cố-thường-gặp">Xử lý sự cố thường gặp</a></li>
+<li><a href="#13-phụ-lục-thuật-ngữ-mẹo-tối-ưu">Phụ lục — Thuật ngữ &amp; Mẹo tối ưu</a></li>
+<li><a href="#14-lộ-trình-chi-tiết-tạo-video-đồng-nhất-nhân-vật"><strong>⭐ Lộ trình chi tiết: Tạo Video Đồng Nhất Nhân Vật + Bộ prompt mẫu</strong></a></li>
+</ol>
 </div>
 
-<!-- ======== 1. GIỚI THIỆU ======== -->
-<div class="section" id="intro">
-    <h2>1. Giới thiệu</h2>
-    <p><strong>NAV TOOLS</strong> là ứng dụng desktop giúp bạn tạo video và ảnh bằng trí tuệ nhân tạo (AI) của Google. Bạn chỉ cần nhập mô tả bằng chữ (gọi là <em>prompt</em>), app sẽ tự động tạo ra video hoặc ảnh chất lượng cao.</p>
 
-    <div class="feature-grid">
-        <div class="feature-card">
-            <div class="icon">🖼️</div>
-            <div class="name">Tạo Ảnh</div>
-            <div class="desc">Tạo ảnh từ mô tả bằng chữ</div>
-        </div>
-        <div class="feature-card">
-            <div class="icon">👥</div>
-            <div class="name">Ảnh đồng nhất</div>
-            <div class="desc">Tạo ảnh giữ nhân vật giống nhau</div>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🎞️</div>
-            <div class="name">Video đồng nhất</div>
-            <div class="desc">Tạo video giữ nhân vật cố định</div>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🎬</div>
-            <div class="name">Video Flow</div>
-            <div class="desc">Tạo video từ mô tả chữ</div>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🎥</div>
-            <div class="name">Video từ ảnh</div>
-            <div class="desc">Biến 1 ảnh tĩnh thành video sống động</div>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🔗</div>
-            <div class="name">Nối khung hình</div>
-            <div class="desc">Tạo video nối liền 2 ảnh</div>
-        </div>
-    </div>
 
-    <h3>Yêu cầu hệ thống</h3>
-    <ul>
-        <li><strong>Windows</strong> 10/11 (64-bit) hoặc <strong>macOS</strong> 12+</li>
-        <li>Trình duyệt <strong>Google Chrome</strong> đã cài sẵn</li>
-        <li>Kết nối Internet ổn định</li>
-    </ul>
+<div class="section" id="1-giới-thiệu">
+<h2 id="1-giới-thiệu">1. Giới thiệu</h2>
+<p><strong>NAV TOOLS</strong> là ứng dụng desktop chuyên tạo video và ảnh bằng trí tuệ nhân tạo (AI) của Google. Ứng dụng tự động hóa toàn bộ quy trình: bạn chỉ cần nhập danh sách mô tả (prompt), phần mềm sẽ tự tạo sản phẩm, tự tải về và tự quản lý phiên làm việc thay bạn.</p>
+<h3 id="tính-năng-chính-6-chế-độ">Tính năng chính (6 chế độ):</h3>
+<ul>
+<li>🖼️ <strong>Tạo Ảnh</strong> — Tạo ảnh từ mô tả bằng chữ.</li>
+<li>👥 <strong>Ảnh đồng nhất</strong> — Tạo ảnh giữ nhân vật cố định xuyên suốt (dùng alias <code>@nv1</code>, <code>@nv2</code>...).</li>
+<li>🎞️ <strong>Video đồng nhất</strong> — Tạo video với nhân vật giữ nguyên khuôn mặt/trang phục từ ảnh tham chiếu.</li>
+<li>🎬 <strong>Video Flow</strong> — Tạo video từ mô tả bằng chữ (chế độ mặc định, dùng nhiều nhất).</li>
+<li>🎥 <strong>Video từ ảnh</strong> — Biến 1 ảnh tĩnh thành video có chuyển động.</li>
+<li>🔗 <strong>Nối khung hình</strong> — Tạo video chuyển tiếp mượt mà giữa 2 ảnh (đầu + cuối).</li>
+</ul>
+<h3 id="yêu-cầu-hệ-thống">Yêu cầu hệ thống:</h3>
+<ul>
+<li><strong>Hệ điều hành</strong>: Windows 10/11 (64-bit) hoặc macOS 12+</li>
+<li><strong>Trình duyệt</strong>: Cần cài sẵn <strong>Google Chrome</strong> đời mới.</li>
+<li><strong>Mạng</strong>: Kết nối Internet ổn định (có thể cần VPN nếu Google Labs bị chặn khu vực).</li>
+<li><strong>Tài khoản Google Veo 3.1</strong>: ⚠️ <strong>BẮT BUỘC</strong> — xem <a href="#2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">Mục 2</a>.</li>
+<li><strong>FFmpeg</strong> <em>(Tùy chọn)</em>: Để dùng tính năng ghép/nối video.</li>
+</ul>
+<div class="alert alert-info"><p>💡 <strong>Quan trọng:</strong> Công cụ <strong>không tự cung cấp credit AI</strong> — bạn phải có sẵn tài khoản Google đã mua quyền Veo 3.1. Credit bị trừ trên tài khoản Google của bạn, không phải NAV TOOLS.</p></div>
 </div>
 
-<!-- ======== 2. CÀI ĐẶT ======== -->
-<div class="section" id="install">
-    <h2>2. Cài đặt & Khởi chạy</h2>
-
-    <h3>🪟 Trên Windows</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content"><strong>Giải nén</strong> file <code>NAVTools_v1.0.0_win64.zip</code> vào một thư mục bất kỳ (ví dụ: <code>D:\NAVTools</code>)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Nhận file cấu hình xác thực <code>service_account.json</code> từ Admin. Tạo thư mục ẩn <code>.vidgen</code> ngang hàng với file chạy <code>.exe</code> và copy file <code>json</code> đó vào bên trong.</div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content"><strong>Nhấp đúp</strong> vào file <code>NAVTools.exe</code> để chạy app</div>
-    </div>
-
-    <div class="alert alert-warning">
-        ⚠️ <strong>Lần đầu chạy:</strong> Windows có thể hiện cảnh báo "Windows protected your PC". Nhấn <strong>More info</strong> → <strong>Run anyway</strong> để tiếp tục.
-    </div>
-    <div class="alert alert-warning">
-        ⚠️ <strong>Nếu báo thiếu DLL:</strong> Tải và cài Visual C++ Redistributable tại: <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">https://aka.ms/vs/17/release/vc_redist.x64.exe</a>
-    </div>
-
-    <h3>🍎 Trên macOS</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content"><strong>Giải nén</strong> file <code>NAVTools_v1.0.0_macos.zip</code> và cấu hình thư mục ẩn <code>.vidgen/service_account.json</code> tương tự bản Windows.</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Mở <strong>Terminal</strong> (tìm trong Launchpad → Other → Terminal)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Chạy lệnh sau <strong>(chỉ cần 1 lần đầu)</strong>:
-            <pre><code>cd /đường/dẫn/tới/NAVTools
-chmod +x NAVTools</code></pre>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Nhấp đúp <code>NAVTools</code> để chạy, hoặc chạy trong Terminal: <code>./NAVTools</code></div>
-    </div>
-
-    <div class="alert alert-warning">
-        ⚠️ <strong>macOS chặn app:</strong> Nếu macOS báo "app is damaged" → Vào <strong>System Settings → Privacy & Security</strong> → Cuộn xuống tìm NAVTools → Nhấn <strong>Allow Anyway</strong>. Hoặc chạy: <code>xattr -cr /đường/dẫn/tới/NAVTools</code>
-    </div>
-
-    <h3>📦 Cài đặt bổ sung (bắt buộc, chỉ làm 1 lần)</h3>
-    <p>App cần trình duyệt Chromium để hoạt động. Mở <strong>Terminal</strong> (macOS) hoặc <strong>Command Prompt</strong> (Windows) rồi chạy:</p>
-    <pre><code>pip install playwright
-python -m playwright install chromium</code></pre>
-    <div class="alert alert-info">
-        📌 Nếu máy chưa cài Python, hãy tải tại: <a href="https://www.python.org/downloads/">python.org/downloads</a>
-    </div>
+<div class="section" id="2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">
+<h2 id="2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">2. Yêu cầu tài khoản VEO 3.1 (Đọc trước khi cài)</h2>
+<p>⭐ <strong>Đây là phần quan trọng nhất. Đọc kỹ trước khi cài app để tránh lãng phí thời gian.</strong></p>
+<h3 id="21-vì-sao-cần-tài-khoản-veo-31">2.1 Vì sao cần tài khoản Veo 3.1?</h3>
+<p>NAV TOOLS <strong>không render video bằng GPU cục bộ</strong>. Thay vào đó, nó điều khiển một trình duyệt Chrome/Chromium ẩn để gọi API Google Veo 3.1 trên <strong>tài khoản Google của bạn</strong>. Mỗi video được tạo sẽ <strong>trừ credit trực tiếp trên tài khoản Google đó</strong>, không phải trên NAV TOOLS.</p>
+<p>Nói cách khác:<br />
+- NAV TOOLS = công cụ tự động hóa thao tác<br />
+- Google Veo 3.1 = dịch vụ AI thực sự tạo video (của bạn, qua tài khoản của bạn)</p>
+<h3 id="22-hai-loại-tài-khoản-free-vs-paygate_tier_two">2.2 Hai loại tài khoản — FREE vs PAYGATE_TIER_TWO</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Ai có?</th>
+<th>Credit/ngày</th>
+<th>Dùng thực tế?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>FREE</code></strong></td>
+<td>Bất kỳ tài khoản Google mới truy cập labs.google/fx</td>
+<td>~10 credit/ngày</td>
+<td>❌ Chỉ đủ test 1 video Fast</td>
+</tr>
+<tr>
+<td><strong><code>PAYGATE_TIER_TWO</code></strong></td>
+<td>Tài khoản đã mua Google AI Pro / AI Ultra (có quyền Veo 3.1)</td>
+<td>~300 credit/ngày</td>
+<td>✅ Dùng cho sản xuất hàng loạt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chi phí credit thực tế:</strong><br />
+- Video <strong>Fast</strong> (Veo 3.1 - Fast): ~<strong>10 credit</strong> / video<br />
+- Video <strong>Quality</strong> (Veo 3.1 - Quality): ~<strong>100 credit</strong> / video<br />
+- <strong>Tạo ảnh</strong>: ✅ <strong>Không trừ credit Veo</strong> — bạn có thể tạo ảnh thoải mái mà không ảnh hưởng quota video. Credit video chỉ dùng cho các chế độ sinh video.</p>
+<p><strong>Tính toán nhanh (credit Veo cho video):</strong><br />
+- FREE (10 credit/ngày) = 1 video Fast/ngày, <strong>không</strong> thể tạo video Quality<br />
+- PAYGATE_TIER_TWO (300 credit/ngày) = ~30 video Fast hoặc ~3 video Quality/ngày</p>
+<div class="alert alert-warning"><p>💡 <strong>Tin vui về ảnh:</strong> Chế độ <strong>🖼️ Tạo Ảnh</strong> và <strong>👥 Ảnh đồng nhất</strong> <strong>không trừ vào quota Veo 3.1</strong>. Bạn có thể tạo ảnh hàng loạt thoải mái. Chỉ 4 chế độ video (🎬 Video Flow, 🎞️ Video đồng nhất, 🎥 Video từ ảnh, 🔗 Nối khung hình) mới bị trừ credit Veo.</p>
+<p>⚠️ <strong>Kết luận:</strong> Tài khoản FREE <strong>gần như không dùng video thực tế được</strong> — chỉ để test. Muốn sản xuất video thực sự, bạn BẮT BUỘC phải có tài khoản <code>PAYGATE_TIER_TWO</code>. Nếu chỉ dùng để tạo ảnh → FREE tier vẫn OK.</p></div>
+<h3 id="23-kiểm-tra-tài-khoản-có-quyền-veo-31-chưa-checklist">2.3 Kiểm tra tài khoản có quyền Veo 3.1 chưa — Checklist</h3>
+<p>Làm theo 8 bước sau trước khi cài NAV TOOLS:</p>
+<ol>
+<li>Mở <strong>Google Chrome</strong> thường (KHÔNG dùng chế độ Ẩn danh).</li>
+<li>Truy cập <code>https://labs.google/fx</code>.</li>
+<li>Đăng nhập tài khoản Google bạn muốn dùng.</li>
+<li>Đồng ý <strong>Terms of Service</strong> nếu được hỏi.</li>
+<li>Truy cập trực tiếp <code>https://labs.google/fx/tools/video-fx</code>.</li>
+<li>✅ Nếu thấy giao diện tạo video có dropdown chọn <strong>"Veo 3.1 Fast"</strong> hoặc <strong>"Veo 3.1 Quality"</strong> → tài khoản <strong>CÓ QUYỀN</strong> Veo 3.1.</li>
+<li>❌ Nếu bị chặn, thấy "Not available", "Join waitlist", hoặc không thấy tool Flow → tài khoản <strong>CHƯA có quyền</strong> Veo 3.1, cần nâng cấp.</li>
+<li>Ghi nhớ số <strong>credit</strong> hiển thị ở góc trên — đây là số credit NAV TOOLS sẽ dùng.</li>
+</ol>
+<div class="screenshot">
+<img alt="Trang Google Labs/FX với dropdown Veo 3.1" src="images/google_labs_fx.png" />
+<div class="caption">Giao diện labs.google/fx/tools/video-fx — chỗ verify tài khoản có Veo 3.1</div>
+</div>
+<h3 id="24-cách-nâng-cấp-lên-paygate_tier_two">2.4 Cách nâng cấp lên PAYGATE_TIER_TWO</h3>
+<p>Nếu tài khoản chưa có quyền Veo 3.1:</p>
+<ol>
+<li>Truy cập <code>https://one.google.com/about/google-ai-plans/</code> (hoặc tìm "Google AI Pro / Ultra").</li>
+<li>Chọn gói <strong>Google AI Pro</strong> hoặc <strong>Google AI Ultra</strong> có bao gồm Veo 3.1.</li>
+<li>Thanh toán (cần thẻ Visa/Mastercard quốc tế).</li>
+<li>Quay lại <code>https://labs.google/fx/tools/video-fx</code> → verify dropdown Veo 3.1 đã xuất hiện.</li>
+</ol>
+<div class="alert alert-warning"><p>⚠️ <strong>Lưu ý quan trọng:</strong><br />
+- Chính sách Google thay đổi theo <strong>khu vực địa lý</strong> — một số quốc gia có thể cần VPN US/UK để mua được.<br />
+- <strong>1 subscription = 1 tài khoản = 1 quota riêng</strong>.<br />
+- <strong>KHÔNG chia sẻ</strong> 1 phiên đăng nhập cho nhiều máy đồng thời → Google sẽ ban rate limit.</p></div>
+<h3 id="25-số-lượng-tài-khoản-đề-xuất">2.5 Số lượng tài khoản đề xuất</h3>
+<ul>
+<li><strong>Tối thiểu</strong>: 1 tài khoản <code>PAYGATE_TIER_TWO</code> để bắt đầu.</li>
+<li><strong>Đề xuất thực tế</strong>: <strong>3-5 tài khoản</strong> <code>PAYGATE_TIER_TWO</code> để NAV TOOLS tự động xoay vòng (round-robin) khi 1 tài khoản cạn credit.</li>
+<li>Tài khoản FREE <strong>chỉ để TEST</strong>, không phục vụ sản xuất.</li>
+</ul>
+<div class="alert alert-warning"><p>⚠️ <strong>Cảnh báo thường gặp:</strong> Nếu thêm tài khoản FREE vào NAV TOOLS, app vẫn hoạt động nhưng sẽ báo lỗi <strong>"Credit reached"</strong> sau 1-2 video. <strong>Đây KHÔNG phải lỗi app</strong> — là do tài khoản FREE cạn credit. Giải pháp duy nhất: nâng cấp tài khoản.</p></div>
 </div>
 
-<!-- ======== 3. ĐĂNG KÝ / ĐĂNG NHẬP ======== -->
-<div class="section" id="login">
-    <h2>3. Đăng ký & Đăng nhập</h2>
-
-    <p>Khi mở app lần đầu, bạn sẽ thấy màn hình đăng nhập:</p>
-
-    <!-- 2 screenshots side by side: Login + Register -->
-    <div class="screenshot-row">
-        <div class="screenshot">
-            <img src="images/login_screen_new.png" alt="Màn hình đăng nhập" style="max-width: 320px;">
-            <div class="caption">Màn hình Đăng nhập</div>
-        </div>
-        <div class="screenshot">
-            <img src="images/register_screen.png" alt="Màn hình đăng ký" style="max-width: 320px;">
-            <div class="caption">Màn hình Đăng ký tài khoản mới</div>
-        </div>
-    </div>
-
-    <h3>Đăng ký tài khoản mới</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Ở màn hình đăng nhập, nhấn link <strong>"Đăng ký"</strong> ở cuối màn hình</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Điền thông tin:
-            <ul>
-                <li><strong>Tên đăng nhập:</strong> Chọn 1 username (tối thiểu 3 ký tự)</li>
-                <li><strong>Mật khẩu:</strong> Nhập mật khẩu (tối thiểu 6 ký tự)</li>
-                <li><strong>Xác nhận mật khẩu:</strong> Nhập lại mật khẩu giống ở trên</li>
-            </ul>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Nhấn nút <strong>"Đăng ký"</strong></div>
-    </div>
-
-    <div class="alert alert-info">
-        📌 Sau khi đăng ký, bạn cần <strong>chờ Admin kích hoạt</strong> tài khoản. Việc đăng ký trên máy nào sẽ vĩnh viễn khóa tài khoản dính với định danh (Machine ID) của máy tính đó.
-    </div>
-
-    <h3>Đăng nhập</h3>
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Nhập <strong>Tên đăng nhập</strong> và <strong>Mật khẩu</strong></div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">(Tùy chọn) Tick vào ô <strong>"Ghi nhớ đăng nhập"</strong> để lần sau không cần nhập lại</div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Nhấn nút <strong>"Đăng nhập"</strong></div>
-    </div>
-
-    <div class="alert alert-warning">
-        ⚠️ Mỗi tài khoản app chỉ được sử dụng trên <strong>1 máy tính duy nhất</strong>. Nếu muốn đổi máy, phải liên hệ Admin.
-    </div>
+<div class="section" id="3-cài-đặt-ứng-dụng-nav-tools">
+<h2 id="3-cài-đặt-ứng-dụng-nav-tools">3. Cài đặt ứng dụng NAV TOOLS</h2>
+<h3 id="trên-windows">🪟 Trên Windows</h3>
+<ol>
+<li><strong>Giải nén</strong> file thư mục <code>NAVTools_v1.0.0_win64</code> tải về. Bạn có thể để ở ổ đĩa bất kỳ (VD: <code>D:\NAVTools</code> hoặc <code>C:\NAVTools</code>).</li>
+<li>Nhận file cấu hình xác thực <code>service_account.json</code> từ Admin. Tạo thư mục ẩn <code>.vidgen</code> ngang hàng với file chạy <code>.exe</code> và copy file JSON đó vào:<br />
+<code>text
+   &lt;install-folder&gt;\NAVTools\
+   ├── NAVTools.exe
+   └── .vidgen\
+       └── service_account.json</code></li>
+<li>Khởi chạy phần mềm: <strong>Nhấp đúp</strong> vào file <code>NAVTools.exe</code> để mở.</li>
+</ol>
+<div class="alert alert-warning"><p>⚠️ <strong>Quan trọng:</strong> File <code>service_account.json</code> là BẮT BUỘC để app xác thực bản quyền với Admin (file này KHÔNG liên quan tới tài khoản Google Veo 3.1 — đó là 2 thứ khác nhau).</p></div>
+<h3 id="trên-macos">🍎 Trên macOS</h3>
+<ol>
+<li>Giải nén và thiết lập file <code>service_account.json</code> trong <code>.vidgen/</code> tương tự Windows.</li>
+<li>Mở <strong>Terminal</strong>, trỏ tới thư mục vừa giải nén: <code>cd /duong/dan/toi/NAVTools</code></li>
+<li><strong>Gỡ quarantine flag</strong> của macOS (⚠️ <strong>BẮT BUỘC</strong> trên Apple Silicon và macOS 13+):<br />
+<code>bash
+   sudo xattr -cr /duong/dan/toi/NAVTools</code><br />
+   Nhập mật khẩu máy Mac khi được hỏi. Lệnh này cho phép app chạy mà không bị Gatekeeper chặn.</li>
+<li>Cấp quyền thực thi: <code>chmod +x NAVTools</code></li>
+<li>Khởi chạy bằng Terminal: <code>./NAVTools</code></li>
+</ol>
+<div class="alert alert-warning"><p>⚠️ <strong>Nếu vẫn bị chặn:</strong> Vào <strong>System Settings → Privacy &amp; Security</strong> → cuộn xuống phần bảo mật → bấm <strong>"Allow Anyway"</strong> cho NAVTools. Sau đó chạy lại <code>./NAVTools</code> và chọn "Open" khi Mac hỏi.</p>
+<p>💡 <strong>Vì sao cần <code>sudo xattr -cr</code>?</strong> macOS tự động gắn cờ "quarantine" cho mọi file tải về từ Internet. Lệnh này xóa cờ đó để app có thể chạy bình thường. Đây là thao tác an toàn, không ảnh hưởng máy.</p>
+<p>💡 <strong>Lưu ý:</strong> Bản NAV TOOLS đã bao gồm sẵn trình duyệt ẩn để tương tác với Google — bạn <strong>không cần cài thêm gì</strong>. Chỉ cần đảm bảo <strong>Google Chrome thường</strong> đã cài trên máy (phục vụ bước đăng nhập tài khoản Google ở Mục 5).</p></div>
 </div>
 
-<!-- ======== 4. THÊM TÀI KHOẢN GOOGLE ======== -->
-<div class="section" id="google-account">
-    <h2>4. Thêm tài khoản Google (bắt buộc)</h2>
-    <p>Đây là bước <strong>BẮT BUỘC</strong> trước khi sử dụng app. App cần tài khoản Google đã đăng ký Google Labs để tạo video/ảnh.</p>
-
-    <h3>Bước A — Đăng ký Google Labs (nếu chưa có)</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Mở trình duyệt Chrome, truy cập: <strong><a href="https://labs.google/fx">https://labs.google/fx</a></strong></div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Nhấn nút <strong>"Sign in with Google"</strong> ở góc trên bên phải (nút màu hồng tím)</div>
-    </div>
-
-    <div class="screenshot">
-        <img src="images/google_labs_fx.png" alt="Trang Google Labs/FX" style="max-width: 700px;">
-        <div class="caption">Trang Google Labs/FX — Nhấn nút "Sign in with Google" ở góc trên phải</div>
-    </div>
-
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Đăng nhập bằng tài khoản Google (Gmail) của bạn</div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Chấp nhận điều khoản sử dụng nếu được yêu cầu</div>
-    </div>
-
-    <div class="alert alert-success">
-        ✅ Sau bước này, tài khoản Google của bạn đã sẵn sàng để sử dụng với NAV TOOLS.
-    </div>
-
-    <h3>Bước B — Thêm tài khoản Google vào app</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Trong app, nhấn vào mục <strong>"⚙️ Cài đặt"</strong> ở thanh bên trái (hoặc biểu tượng ⚙ ở góc trên phải)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Ở tab <strong>"Tài khoản Google"</strong>, nhấn nút <strong>"+ Thêm tài khoản"</strong> (nút xanh lam phía trên bên phải)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Một cửa sổ Chrome mới sẽ tự động mở ra trang <strong>labs.google/fx</strong>:
-            <ul>
-                <li>Nhấn <strong>"Sign in with Google"</strong></li>
-                <li>Chọn tài khoản Google bạn muốn dùng</li>
-                <li>Đăng nhập nếu được yêu cầu</li>
-            </ul>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Sau khi đăng nhập thành công, <strong>đóng cửa sổ Chrome này lại</strong> (nhấn nút X)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content">Quay lại app — tài khoản Google sẽ tự động xuất hiện trong bảng quản lý</div>
-    </div>
-
-    <div class="screenshot">
-        <img src="images/settings_accounts.png" alt="Bảng quản lý tài khoản Google">
-        <div class="caption">Màn hình quản lý tài khoản Google — hiển thị danh sách tài khoản đã thêm với Email, Tier, Credit, và ngày hết hạn Cookie</div>
-    </div>
-
-    <div class="alert alert-info">
-        💡 Bạn có thể thêm <strong>nhiều tài khoản Google</strong> để tăng số lượt tạo video/ảnh mỗi ngày. App sẽ tự chuyển đổi giữa các tài khoản khi hết credit.
-    </div>
-
-    <div class="callout">
-        <h4>📌 Giải thích các cột trong bảng tài khoản</h4>
-        <table>
-            <tr><th>Cột</th><th>Ý nghĩa</th></tr>
-            <tr><td><strong>Enabled</strong></td><td>Bật/tắt tài khoản (gạt công tắc xanh = đang dùng)</td></tr>
-            <tr><td><strong>Email</strong></td><td>Địa chỉ Gmail của tài khoản</td></tr>
-            <tr><td><strong>Tier</strong></td><td>Gói dịch vụ:
-                <span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px">PAYGATE_TIER_ONE</span> (trả phí cơ bản) hoặc
-                <span style="background:#f97316;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px">PAYGATE_TIER_TWO</span> (trả phí cao cấp) hoặc
-                <span style="background:#424754;color:#c2c6d6;padding:2px 8px;border-radius:4px;font-size:11px">FREE</span>
-            </td></tr>
-            <tr><td><strong>Credit</strong></td><td>Số lượt tạo video/ảnh còn lại</td></tr>
-            <tr><td><strong>Cookie Exp</strong></td><td>Ngày hết hạn đăng nhập — cần <strong>Renew</strong> nếu hết hạn</td></tr>
-        </table>
-    </div>
+<div class="section" id="4-đăng-ký-đăng-nhập-nav-tools">
+<h2 id="4-đăng-ký-đăng-nhập-nav-tools">4. Đăng ký &amp; Đăng nhập NAV TOOLS</h2>
+<p>Trước khi sử dụng app, bạn cần có tài khoản NAV TOOLS (username + password) để đăng nhập.</p>
+<div class="alert alert-info"><p>💡 <strong>Lưu ý:</strong> Đây là tài khoản <strong>NAV TOOLS</strong> nội bộ (username + password), <strong>KHÔNG phải tài khoản Google</strong>. Việc thêm tài khoản Google để chạy AI được làm ở <a href="#5-thêm-tài-khoản-google-vào-nav-tools">Mục 5</a>.</p></div>
+<p><strong>Bước 1: Đăng ký</strong><br />
+Mở app, ngay màn hình Login, nhấp chọn <strong>"Đăng ký"</strong>. Điền thông tin (Tên đăng nhập tự chọn, Mật khẩu tối thiểu 6 ký tự). Hệ thống sẽ thông báo ghi danh thành công.<br />
+<em>Lưu ý: Mặc định tài khoản sau đăng ký được Active 30 ngày (hoặc có thể phải chờ Admin kích hoạt tùy thuộc server).</em></p>
+<div class="screenshot">
+<img alt="Màn hình đăng ký tài khoản NAV TOOLS" src="images/register_screen.png" />
+<div class="caption">Màn hình đăng ký — username + password</div>
+</div>
+<p><strong>Bước 2: Đăng nhập</strong><br />
+Sử dụng tài khoản vừa ghi danh để đăng nhập. Bạn có thể chọn hộp kiểm <strong>"Ghi nhớ đăng nhập"</strong> để bỏ qua bước này cho lần sau.</p>
+<div class="screenshot">
+<img alt="Màn hình đăng nhập NAV TOOLS" src="images/login_screen_new.png" />
+<div class="caption">Màn hình đăng nhập có tùy chọn "Ghi nhớ đăng nhập"</div>
+</div>
+<div class="alert alert-warning"><p>⚠️ Mỗi tài khoản chỉ được sử dụng trên <strong>1 máy tính</strong> (gắn kết Machine ID). Nếu cố tình đăng nhập máy khác, hệ thống sẽ từ chối. Liên hệ Admin để reset Machine-ID nếu đổi máy.</p></div>
 </div>
 
-<!-- ======== 5. GIAO DIỆN CHÍNH ======== -->
-<div class="section" id="interface">
-    <h2>5. Giao diện chính</h2>
-    <p>Sau khi đăng nhập và thêm tài khoản Google, bạn sẽ thấy giao diện chính gồm 3 phần:</p>
-
-    <div class="screenshot">
-        <img src="images/main_interface.png" alt="Giao diện chính NAV TOOLS">
-        <div class="caption">Giao diện chính NAV TOOLS — Chế độ "Video đồng nhất" với thanh bên trái, cấu hình ở giữa, và bảng kết quả bên phải</div>
-    </div>
-
-    <h3>① Thanh bên trái (Sidebar)</h3>
-    <p>Chứa logo app và các nút điều hướng giữa các chế độ. Chế độ đang chọn sẽ được <strong>tô sáng</strong>:</p>
-    <table class="sidebar-table">
-        <tr><th>Biểu tượng</th><th>Chức năng</th></tr>
-        <tr><td>🖼️</td><td><strong>Tạo Ảnh</strong> — Tạo ảnh từ mô tả</td></tr>
-        <tr><td>👥</td><td><strong>Ảnh đồng nhất</strong> — Tạo ảnh giữ nhân vật cố định</td></tr>
-        <tr><td>🎞️</td><td><strong>Video đồng nhất</strong> — Tạo video giữ nhân vật cố định</td></tr>
-        <tr><td>🎬</td><td><strong>Video Flow</strong> — Tạo video từ mô tả chữ</td></tr>
-        <tr><td>🎥</td><td><strong>Video từ ảnh</strong> — Tạo video từ 1 ảnh</td></tr>
-        <tr><td>🔗</td><td><strong>Nối khung hình</strong> — Tạo video nối 2 ảnh</td></tr>
-        <tr><td>📋</td><td><strong>Logs</strong> — Xem nhật ký hoạt động</td></tr>
-        <tr><td>⚙️</td><td><strong>Cài đặt</strong> — Quản lý tài khoản & cấu hình</td></tr>
-    </table>
-
-    <h3>② Phần cấu hình (giữa)</h3>
-    <p>Đây là nơi bạn thiết lập thông số cho mỗi lần tạo:</p>
-    <ul>
-        <li><strong>Chất lượng video:</strong> Veo 3.1 - Quality (cao nhất), Fast (nhanh), Lite (nhẹ nhất)</li>
-        <li><strong>Tỷ lệ khung hình:</strong> 16:9 Ngang, 9:16 Dọc, hoặc 1:1 Vuông</li>
-        <li><strong>Đồng thời:</strong> Số video/ảnh tạo cùng lúc (mặc định: 1)</li>
-        <li><strong>Thư mục lưu:</strong> Chọn nơi lưu file khi tạo xong (nhấn 📂 để duyệt thư mục)</li>
-        <li><strong>Nhân vật tham chiếu:</strong> Upload ảnh nhân vật mẫu (chỉ ở chế độ "đồng nhất")</li>
-        <li><strong>Danh sách Prompt:</strong> Nhập mô tả nội dung muốn tạo — mỗi dòng = 1 video/ảnh</li>
-    </ul>
-
-    <h3>③ Bảng kết quả (bên phải)</h3>
-    <p>Hiển thị tiến trình và kết quả. Tiêu đề "Chế độ tạo mới" + badge <strong>"0 prompts"</strong> cho biết số prompt đang xử lý:</p>
-    <table>
-        <tr><th>Cột</th><th>Ý nghĩa</th></tr>
-        <tr><td><strong>#</strong></td><td>Số thứ tự</td></tr>
-        <tr><td><strong>Prompt</strong></td><td>Mô tả đã nhập</td></tr>
-        <tr><td><strong>Video</strong></td><td>Link xem/tải video/ảnh khi hoàn tất</td></tr>
-        <tr><td><strong>Trạng thái</strong></td><td>PENDING (chờ) → GENERATING (đang tạo) → COMPLETED (xong) / ERROR (lỗi)</td></tr>
-    </table>
-
-    <h3>④ Các nút điều khiển (dưới cùng)</h3>
-    <table>
-        <tr><th>Nút</th><th>Chức năng</th></tr>
-        <tr><td><strong>▶ Bắt đầu tạo</strong></td><td>Bắt đầu tạo video/ảnh từ danh sách prompt (nút cam lớn)</td></tr>
-        <tr><td><strong>⏸ Tạm dừng</strong></td><td>Tạm dừng quá trình tạo</td></tr>
-        <tr><td><strong>⏹ Dừng hẳn</strong></td><td>Dừng hoàn toàn, hủy các prompt chưa tạo</td></tr>
-        <tr><td><strong>💾 Lưu cấu hình</strong></td><td>Lưu cài đặt hiện tại để dùng lại</td></tr>
-        <tr><td><strong>📁 Quản lý Task</strong></td><td>Xem và quản lý các task đã tạo trước đó</td></tr>
-        <tr><td><strong>🔄 Làm lại lỗi</strong></td><td>Chạy lại các prompt bị lỗi (nút cam dưới)</td></tr>
-        <tr><td><strong>✂ Ghép Video</strong></td><td>Ghép nhiều video đã tạo thành 1 video dài (nút xanh dương)</td></tr>
-    </table>
+<div class="section" id="5-thêm-tài-khoản-google-vào-nav-tools">
+<h2 id="5-thêm-tài-khoản-google-vào-nav-tools">5. Thêm tài khoản Google vào NAV TOOLS</h2>
+<p>⭐ <strong>Đây là bước quan trọng nhất sau khi cài app. Đọc kỹ từng bước.</strong></p>
+<p>App dùng các tài khoản Google (Gmail) của bạn làm "động cơ" thực sự để gọi AI Google Veo 3.1. Bước này sẽ hướng dẫn bạn gắn tài khoản Google vào NAV TOOLS.</p>
+<h3 id="51-điều-kiện-tiên-quyết-checklist">5.1 Điều kiện tiên quyết (Checklist)</h3>
+<p>Trước khi bấm "+ Thêm tài khoản", đảm bảo:</p>
+<ul>
+<li>[ ] Bạn đã có tài khoản Google với quyền <strong>Veo 3.1</strong> (verify theo <a href="#23-kiểm-tra-tài-khoản-có-quyền-veo-31-chưa-checklist">Mục 2.3</a>)</li>
+<li>[ ] <strong>Google Chrome</strong> đã cài đặt trên máy (NAV TOOLS sẽ tự dò tìm)</li>
+<li>[ ] Bạn đang ở màn hình chính NAV TOOLS (đã login thành công theo <a href="#4-đăng-ký-đăng-nhập-nav-tools">Mục 4</a>)</li>
+<li>[ ] <strong>Đóng mọi cửa sổ Chrome đang chạy</strong> trên máy để tránh xung đột profile</li>
+</ul>
+<h3 id="52-quy-trình-thêm-tài-khoản-7-bước-chi-tiết">5.2 Quy trình thêm tài khoản — 7 bước chi tiết</h3>
+<p><strong>Bước 1: Mở Settings</strong><br />
+- Bấm biểu tượng <strong>⚙️ Cài đặt</strong> ở <strong>sidebar</strong> (mục cuối cùng trong danh sách trái).</p>
+<p><strong>Bước 2: Chọn tab "Tài khoản Google"</strong><br />
+- Tab đầu tiên của dialog Settings.</p>
+<p><strong>Bước 3: Bấm nút "+ Thêm tài khoản"</strong><br />
+- Nút ở góc trên phải của tab.</p>
+<p><strong>Bước 4: Chrome tự động mở lên</strong><br />
+- NAV TOOLS sẽ <strong>spawn một cửa sổ Chrome riêng biệt</strong> với profile isolated (không động chạm tới Chrome thường ngày của bạn).<br />
+- Cửa sổ Chrome này tự động mở tới URL: <code>https://labs.google/fx</code><br />
+- Status label trong app hiển thị:</p>
+<div class="alert alert-info"><p>🌐 <em>"Chrome đã mở labs.google/fx → Bấm 'Sign in with Google' → Đăng nhập. Đăng nhập xong thì đóng Chrome, app sẽ tự nhận."</em></p></div>
+<p><strong>Bước 5: Đăng nhập Google trong cửa sổ Chrome đó</strong><br />
+- Bấm nút <strong>"Sign in with Google"</strong> trên trang labs.google/fx.<br />
+- Nhập <strong>email</strong> và <strong>mật khẩu</strong> tài khoản Google.<br />
+- Nhập <strong>mã 2FA</strong> nếu có.<br />
+- Đồng ý <strong>Terms of Service</strong> nếu được hỏi.<br />
+- <strong>Đợi trang Flow load đầy đủ</strong> — bạn phải thấy giao diện Video Flow có dropdown chọn model Veo 3.1.</p>
+<p><strong>Bước 6: ĐÓNG Chrome bằng nút X (hoặc Cmd/Ctrl+Q)</strong></p>
+<p>⚠️ <strong>ĐÂY LÀ BƯỚC HAY BỊ QUÊN NHẤT</strong> → nguyên nhân 90% lỗi "không thêm được tài khoản".</p>
+<p>NAV TOOLS <strong>không tự phát hiện</strong> bạn đã login xong. Nó <strong>đợi Chrome process thoát hoàn toàn</strong> mới bắt đầu extract cookies. Vì vậy:</p>
+<ul>
+<li>✅ <strong>Đúng:</strong> Login xong → đóng hẳn cửa sổ Chrome → app tự detect.</li>
+<li>❌ <strong>Sai:</strong> Login xong → để Chrome đó → bấm nút khác trong app → app không làm gì.</li>
+</ul>
+<p><strong>Bước 7: Chờ auto-extract + auto-renew (15-30 giây)</strong><br />
+Sau khi Chrome đóng, NAV TOOLS sẽ tự động:<br />
+1. Đọc cookies từ profile Chrome vừa tạo<br />
+2. Bắt email của bạn và ngày hết hạn cookie<br />
+3. Chạy <strong>renew session</strong> lần đầu để gọi Flow API<br />
+4. Trả về <strong>tier</strong> (FREE hoặc PAYGATE_TIER_TWO) và số <strong>credit</strong> hiện có</p>
+<p>Khi thành công, status label chuyển xanh:</p>
+<div class="alert alert-success"><p>✅ <em>"Thêm thành công: [email] — đang export cookies..."</em></p></div>
+<h3 id="53-điều-gì-xảy-ra-sau-khi-thêm-thành-công">5.3 Điều gì xảy ra sau khi thêm thành công</h3>
+<p>Bảng <strong>Tài khoản Google</strong> sẽ cập nhật với row mới:</p>
+<table>
+<thead>
+<tr>
+<th>Cột</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Email</strong></td>
+<td>Gmail bạn vừa đăng nhập</td>
+</tr>
+<tr>
+<td><strong>Tier</strong></td>
+<td><code>FREE</code> hoặc <code>PAYGATE_TIER_TWO</code> — ⭐ <strong>chỗ xác nhận nhanh tài khoản có Veo 3.1 hay không</strong></td>
+</tr>
+<tr>
+<td><strong>Credit</strong></td>
+<td>Số credit còn lại (refresh khi renew)</td>
+</tr>
+<tr>
+<td><strong>Cookie exp</strong></td>
+<td>Ngày cookie Google hết hạn (thường 7-30 ngày)</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Toggle bật/tắt tài khoản</td>
+</tr>
+</tbody>
+</table>
+<div class="screenshot">
+<img alt="Bảng quản lý tài khoản Google" src="images/settings_accounts.png" />
+<div class="caption">Bảng quản lý tài khoản Google — hiển thị Email, Tier, Credit, Cookie exp và toggle Enabled</div>
+</div>
+<p>Bên dưới, NAV TOOLS cũng tự ghi file <code>cookies_export.json</code> vào thư mục profile Chrome của tài khoản đó — file này dùng để inject cookies vào Chromium automation khi chạy task thực sự.</p>
+<h3 id="54-nếu-tài-khoản-hiển-thị-tier-free">5.4 Nếu tài khoản hiển thị Tier = FREE</h3>
+<div class="alert alert-warning"><p>⚠️ <strong>Cảnh báo:</strong> Nếu sau khi thêm thành công mà cột Tier hiển thị <code>FREE</code> → tài khoản Google này <strong>CHƯA có quyền Veo 3.1 trả phí</strong>.</p>
+<p><strong>Việc cần làm:</strong> Quay lại <a href="#24-cách-nâng-cấp-lên-paygate_tier_two">Mục 2.4</a> để nâng cấp lên <code>PAYGATE_TIER_TWO</code> trước khi dùng cho sản xuất. Nếu cố chạy task với tài khoản FREE → sẽ báo <strong>"Credit reached"</strong> sau 1-2 video.</p></div>
+<h3 id="55-các-tình-huống-thất-bại-thường-gặp">5.5 Các tình huống thất bại thường gặp</h3>
+<table>
+<thead>
+<tr>
+<th>Triệu chứng</th>
+<th>Nguyên nhân</th>
+<th>Giải pháp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❌ "Không tìm thấy email"</td>
+<td>Bạn chưa login thực sự trong Chrome trước khi đóng</td>
+<td>Thử lại Bước 4-5, đảm bảo vào được trang Flow</td>
+</tr>
+<tr>
+<td>❌ "Không tìm thấy Chrome!"</td>
+<td>Chưa cài Chrome hoặc cài ở đường dẫn lạ</td>
+<td>Tải Chrome tại <a href="https://www.google.com/chrome/">google.com/chrome</a></td>
+</tr>
+<tr>
+<td>❌ Chrome đóng ngay khi mở</td>
+<td>Có Chrome khác đang giữ profile lock</td>
+<td>Tắt hết Chrome đang chạy → thử lại</td>
+</tr>
+<tr>
+<td>❌ Renew session thất bại "Session hết hạn"</td>
+<td>Login chưa xong hoặc 2FA chưa qua</td>
+<td>Xóa tài khoản → Thêm lại từ đầu</td>
+</tr>
+<tr>
+<td>❌ Thêm xong Tier = FREE</td>
+<td>Tài khoản chưa có Veo 3.1</td>
+<td>Upgrade theo <a href="#24-cách-nâng-cấp-lên-paygate_tier_two">Mục 2.4</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="56-thêm-nhiều-tài-khoản-round-robin">5.6 Thêm nhiều tài khoản — Round-robin</h3>
+<div class="alert alert-info"><p>💡 <strong>Mẹo:</strong> Nên cài đặt sẵn <strong>3-5 tài khoản Google PAYGATE_TIER_TWO khác nhau</strong>. NAV TOOLS có cơ chế <strong>"Round-robin"</strong> — tự luân chuyển tài khoản khi tài khoản số 1 bị cạn quota.</p>
+<p>Lưu ý: Chỉ round-robin giữa các tài khoản <strong>PAYGATE_TIER_TWO</strong> đang <strong>Enabled</strong>. Tài khoản FREE vẫn sẽ bị skip khi cạn credit.</p></div>
 </div>
 
-<!-- ======== 6. CÁC CHẾ ĐỘ ======== -->
-<div class="section" id="modes">
-    <h2>6. Các chế độ tạo nội dung</h2>
-
-    <h3>🎬 Video Flow — Phổ biến nhất</h3>
-    <p>Tạo video từ mô tả bằng chữ, không cần ảnh.</p>
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Chọn tab <strong>"Video Flow"</strong> ở thanh bên</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Chọn <strong>chất lượng</strong> (khuyến nghị: <code>Veo 3.1 - Quality</code>)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Chọn <strong>tỷ lệ khung hình</strong> (16:9 cho video ngang, 9:16 cho video dọc TikTok)</div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Chọn <strong>thư mục lưu</strong> — nhấn biểu tượng 📂 bên cạnh</div>
-    </div>
-    <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content">Nhập prompt vào ô "Danh sách Prompt" (mỗi dòng = 1 video):
-<pre><code>A cat running through autumn leaves
-A futuristic city at sunset
-Children playing in a beautiful garden</code></pre>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">6</div>
-        <div class="step-content">Nhấn nút <strong>"▶ Bắt đầu tạo"</strong> và chờ kết quả ở bảng bên phải</div>
-    </div>
-
-    <h3>🖼️ Tạo Ảnh</h3>
-    <p>Tạo ảnh từ mô tả chữ.</p>
-    <ol>
-        <li>Chọn tab <strong>"Tạo Ảnh"</strong></li>
-        <li>Chọn <strong>model ảnh</strong> (Imagen 4, Nano Banana Pro, Nano Banana 2)</li>
-        <li>Nhập prompt → Nhấn <strong>"▶ Bắt đầu tạo"</strong></li>
-    </ol>
-
-    <h3>👥 Ảnh đồng nhất</h3>
-    <p>Tạo nhiều ảnh khác nhau nhưng giữ nhân vật <strong>giống y hệt nhau</strong>.</p>
-    <ol>
-        <li>Chọn tab <strong>"Ảnh đồng nhất"</strong></li>
-        <li>Ở phần <strong>"Nhân vật tham chiếu"</strong>, nhấn <strong>"+ Thêm"</strong> để upload ảnh nhân vật (tối đa 10 ảnh)</li>
-        <li>Đặt tên (alias) cho mỗi nhân vật, ví dụ: <code>boy</code>, <code>girl</code></li>
-        <li>Nhập prompt, dùng <code>@alias</code> để gọi nhân vật:
-<pre><code>@boy đang đọc sách trong công viên
-@girl đang chạy trên bãi biển
-@boy và @girl đang chơi đùa</code></pre>
-        </li>
-        <li>Nhấn <strong>"▶ Bắt đầu tạo"</strong></li>
-    </ol>
-
-    <h3>🎞️ Video đồng nhất</h3>
-    <p>Tương tự "Ảnh đồng nhất" nhưng tạo <strong>video</strong> thay vì ảnh. Cách dùng giống hệt — upload nhân vật → dùng @alias trong prompt.</p>
-
-    <h3>🎥 Video từ ảnh</h3>
-    <p>Biến 1 ảnh tĩnh thành video sống động.</p>
-    <ol>
-        <li>Chọn tab <strong>"Video từ ảnh"</strong></li>
-        <li>Upload <strong>ảnh khung đầu</strong> (ảnh bạn muốn biến thành video)</li>
-        <li>Nhập prompt mô tả hành động: <code>The character slowly turns and smiles at the camera</code></li>
-        <li>Nhấn <strong>"▶ Bắt đầu tạo"</strong></li>
-    </ol>
-
-    <h3>🔗 Nối khung hình</h3>
-    <p>Tạo video chuyển cảnh mượt mà giữa 2 ảnh.</p>
-    <ol>
-        <li>Chọn tab <strong>"Nối khung hình"</strong></li>
-        <li>Upload <strong>ảnh khung đầu</strong> (bắt đầu) và <strong>ảnh khung cuối</strong> (kết thúc)</li>
-        <li>Nhập prompt mô tả chuyển cảnh: <code>Smooth transition from day to night</code></li>
-        <li>Nhấn <strong>"▶ Bắt đầu tạo"</strong></li>
-    </ol>
-
-    <hr style="margin: 30px 0; border-color: #e2e8f0;">
-
-    <h3>📄 Nhập prompt từ file TXT</h3>
-    <p>Nếu bạn có danh sách prompt dài, thay vì nhập tay:</p>
-    <ol>
-        <li>Chuẩn bị file <code>.txt</code> với mỗi prompt trên một dòng</li>
-        <li>Tick vào ô <strong>"📄 Nhập Prompts (TXT)"</strong> trên giao diện</li>
-        <li>Chọn file TXT từ máy tính</li>
-    </ol>
+<div class="section" id="6-quick-start-task-đầu-tiên-trong-3-phút">
+<h2 id="6-quick-start-task-đầu-tiên-trong-3-phút">6. Quick Start — Task đầu tiên trong 3 phút</h2>
+<p>Nếu bạn đã hoàn thành các bước trên (Mục 2 → 5), hãy chạy thử task đầu tiên:</p>
+<ol>
+<li><strong>Mở NAV TOOLS</strong>, login bằng username/password.</li>
+<li>Vào <strong>⚙️ Cài đặt</strong> → <strong>Thêm ít nhất 1 tài khoản Google</strong> có tier <code>PAYGATE_TIER_TWO</code> (xem <a href="#5-thêm-tài-khoản-google-vào-nav-tools">Mục 5</a>).</li>
+<li>Quay lại sidebar, chọn <strong>🎬 Video Flow</strong>.</li>
+<li>Cấu hình ở panel giữa:<br />
+   - <strong>Chất lượng</strong>: <code>Veo 3.1 - Fast</code> (rẻ nhất, ~10 credit)<br />
+   - <strong>Tỷ lệ khung hình</strong>: <code>16:9 Ngang</code><br />
+   - <strong>Thư mục lưu</strong>: Chọn 1 folder trống</li>
+<li>Ở ô <strong>Danh sách Prompt</strong>, gõ 1 dòng tiếng Anh:<br />
+<code>text
+   A cat wearing sunglasses walking on beach, cinematic slow motion</code></li>
+<li>Bấm nút <strong>▶ Bắt đầu tạo</strong> ở đáy panel giữa.</li>
+<li>Quan sát panel phải:<br />
+<code>PENDING → GENERATING → DOWNLOADING → ✅ COMPLETED</code></li>
+<li>Mở thư mục lưu, xem file MP4 vừa tạo.</li>
+</ol>
+<div class="alert alert-info"><p>💡 <strong>Tip:</strong> Nếu thấy ❌ ERROR, hover chuột vào thumbnail → bấm icon <strong>🔄</strong> để retry item đó, hoặc bấm <strong>▶</strong> để play, <strong>📁</strong> để mở folder.</p></div>
 </div>
 
-<!-- ======== 7. QUẢN LÝ TÀI KHOẢN ======== -->
-<div class="section" id="account-mgmt">
-    <h2>7. Quản lý tài khoản Google</h2>
-
-    <p>Vào <strong>⚙️ Cài đặt</strong> → Tab <strong>"Tài khoản Google"</strong> để quản lý:</p>
-
-    <div class="screenshot">
-        <img src="images/settings_accounts.png" alt="Quản lý tài khoản">
-        <div class="caption">Bảng quản lý tài khoản — bật/tắt, xem tier, credit, cookie, và thao tác Renew/Edit/Xóa</div>
-    </div>
-
-    <h3>Các nút thao tác (cột Actions)</h3>
-    <table>
-        <tr><th style="text-align:center;width:60px">Nút</th><th>Chức năng</th><th>Khi nào dùng?</th></tr>
-        <tr><td style="text-align:center">🔄</td><td><strong>Renew Session</strong></td><td>Khi Cookie Exp hiện <span style="color:red">màu đỏ</span> (hết hạn) hoặc app không tạo được video</td></tr>
-        <tr><td style="text-align:center">✏️</td><td><strong>Chỉnh sửa Tier</strong></td><td>Khi cần cập nhật gói dịch vụ (FREE → PAYGATE)</td></tr>
-        <tr><td style="text-align:center">🗑️</td><td><strong>Xóa tài khoản</strong></td><td>Khi muốn gỡ tài khoản khỏi app</td></tr>
-    </table>
-
-    <div class="callout">
-        <h4>💡 Mẹo quản lý tài khoản</h4>
-        <ul>
-            <li>Thêm <strong>2-3 tài khoản Google</strong> để tăng tổng credit mỗi ngày</li>
-            <li>App sẽ <strong>tự động chuyển đổi</strong> giữa các tài khoản khi hết credit</li>
-            <li><strong>Bật/tắt</strong> tài khoản bằng công tắc ở cột "Enabled"</li>
-            <li><strong>Renew</strong> mỗi khi Cookie Exp gần hết hạn (thường mỗi 30 ngày)</li>
-        </ul>
-    </div>
+<div class="section" id="7-giao-diện-chính">
+<h2 id="7-giao-diện-chính">7. Giao diện chính</h2>
+<p>Thiết kế áp dụng <strong>Dark Mode Kinetic</strong> thanh lịch (Stitch UI).</p>
+<div class="screenshot">
+<img alt="Giao diện chính NAV TOOLS" src="images/main_interface.png" />
+<div class="caption">Toàn cảnh giao diện NAV TOOLS — sidebar trái, panel cấu hình giữa, queue/status panel phải</div>
+</div>
+<h3 id="71-sidebar-bên-trái">7.1 Sidebar (Bên Trái)</h3>
+<p>Chuyển đổi 6 chế độ làm việc và 2 mục tiện ích:</p>
+<ul>
+<li>🖼️ <strong>Tạo Ảnh</strong> — Text → Ảnh</li>
+<li>👥 <strong>Ảnh đồng nhất</strong> — Ảnh tham chiếu → Ảnh (giữ nhân vật)</li>
+<li>🎞️ <strong>Video đồng nhất</strong> — Ảnh tham chiếu → Video (giữ nhân vật, dùng model chuyên dụng)</li>
+<li>🎬 <strong>Video Flow</strong> — Text → Video (Veo 3.1, chế độ mặc định)</li>
+<li>🎥 <strong>Video từ ảnh</strong> — 1 ảnh → Video</li>
+<li>🔗 <strong>Nối khung hình</strong> — 2 ảnh (đầu + cuối) → Video</li>
+<li>📋 <strong>Logs</strong> — Xem sự kiện hệ thống</li>
+<li>⚙️ <strong>Cài đặt</strong> — Quản lý tài khoản Google, theme</li>
+</ul>
+<h3 id="72-panel-giữa-cấu-hình-prompt">7.2 Panel Giữa (Cấu hình &amp; Prompt)</h3>
+<ul>
+<li><strong>Chất lượng</strong>: chỉ có 2 lựa chọn:</li>
+<li><code>Veo 3.1 - Fast</code> (~10 credit/video, nhanh)</li>
+<li><code>Veo 3.1 - Quality</code> (~100 credit/video, chất lượng cao)</li>
+<li><strong>Tỷ lệ khung hình</strong>: <code>16:9 Ngang</code> (YouTube), <code>9:16 Dọc</code> (TikTok/Reels), <code>1:1 Vuông</code> (Instagram post)</li>
+<li><strong>Thư mục lưu</strong>: Nơi xuất ra thành phẩm cuối.</li>
+<li><strong>Khung "Nhân vật tham chiếu"</strong> (grid upload ảnh) — chỉ có ở Ảnh/Video đồng nhất.</li>
+<li><strong>Ô Danh sách Prompt</strong>: Nhập nhiều dòng hoặc import từ file TXT. Mỗi dòng = 1 request tương ứng.</li>
+</ul>
+<h3 id="73-panel-phải-queue-status">7.3 Panel Phải (Queue / Status)</h3>
+<p>Bảng cập nhật trạng thái <strong>real-time</strong> mỗi task item:</p>
+<p><code>⏳ PENDING (Chờ) → 🔄 GENERATING (Đang tạo) → ⬇️ DOWNLOADING (Tải về) → ✅ COMPLETED (Xong)</code> hoặc <code>❌ ERROR (Lỗi)</code></p>
+<p><strong>Tính năng mới:</strong></p>
+<ul>
+<li><strong>Hover vào thumbnail</strong> của item đã xong sẽ hiện <strong>3 icon overlay</strong>:</li>
+<li><strong>🔄</strong> — Retry item này (chạy lại prompt đơn lẻ)</li>
+<li><strong>▶</strong> — Play video / xem ảnh</li>
+<li><strong>📁</strong> — Mở thư mục chứa file</li>
+<li><strong>Nút "+ Tạo task mới"</strong> ở đáy panel giữa: xóa prompt hiện tại nhưng <strong>giữ nguyên ảnh nhân vật + cấu hình</strong> (tiện chạy batch kế tiếp với cùng character).</li>
+</ul>
 </div>
 
-<!-- ======== 8. XỬ LÝ SỰ CỐ ======== -->
-<div class="section" id="troubleshoot">
-    <h2>8. Xử lý sự cố thường gặp</h2>
-
-    <div class="error-item">
-        <h4>❌ "Lỗi hệ thống: không kết nối được server xác thực"</h4>
-        <p><strong>Nguyên nhân:</strong> Thiếu file xác thực hoặc không có mạng</p>
-        <p class="fix"><strong>Cách khắc phục:</strong></p>
-        <ul>
-            <li>Kiểm tra kết nối Internet</li>
-            <li>Đảm bảo file <code>service_account.json</code> nằm trong thư mục <code>.vidgen/</code> cạnh file NAVTools.exe</li>
-            <li>Nếu thiếu file này, liên hệ Admin</li>
-        </ul>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ "Không tìm thấy Chrome"</h4>
-        <p><strong>Nguyên nhân:</strong> Máy chưa cài Google Chrome</p>
-        <p class="fix"><strong>Cách khắc phục:</strong> Tải Chrome tại <a href="https://www.google.com/chrome/">google.com/chrome</a> rồi khởi động lại app</p>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ "Không có tài khoản khả dụng"</h4>
-        <p><strong>Nguyên nhân:</strong> Chưa thêm tài khoản Google hoặc tất cả đã tắt</p>
-        <p class="fix"><strong>Cách khắc phục:</strong> Vào ⚙️ Cài đặt → thêm tài khoản Google (xem Mục 4). Kiểm tra checkbox "Enabled" đã bật cho ít nhất 1 tài khoản.</p>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ "Tài khoản đã được đăng ký trên máy khác"</h4>
-        <p><strong>Nguyên nhân:</strong> Tài khoản NAV TOOLS chỉ dùng được trên 1 máy</p>
-        <p class="fix"><strong>Cách khắc phục:</strong> Liên hệ Admin để reset máy cho tài khoản</p>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ "Tài khoản đã hết hạn"</h4>
-        <p><strong>Nguyên nhân:</strong> Tài khoản NAV TOOLS quá hạn sử dụng</p>
-        <p class="fix"><strong>Cách khắc phục:</strong> Liên hệ Admin để gia hạn</p>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ Video tạo ra bị lỗi liên tục</h4>
-        <p class="fix"><strong>Khắc phục theo thứ tự:</strong></p>
-        <ol>
-            <li>Nhấn <strong>"Làm lại lỗi"</strong> để thử tạo lại</li>
-            <li>Kiểm tra tài khoản Google còn Credit hay không (vào Cài đặt)</li>
-            <li>Nhấn 🔄 <strong>Renew Session</strong> cho tài khoản đang dùng</li>
-            <li>Nếu vẫn lỗi, xóa tài khoản Google cũ và thêm lại</li>
-        </ol>
-    </div>
-
-    <div class="error-item">
-        <h4>❌ App không mở / crash khi khởi động</h4>
-        <p class="fix"><strong>Windows:</strong></p>
-        <ul>
-            <li>Cài Visual C++ Redistributable: <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Tải ở đây</a></li>
-            <li>Cài Playwright: <code>pip install playwright && python -m playwright install chromium</code></li>
-        </ul>
-        <p class="fix"><strong>macOS:</strong></p>
-        <ul>
-            <li>Chạy: <code>xattr -cr /đường/dẫn/tới/NAVTools</code></li>
-            <li>System Settings → Privacy & Security → Allow</li>
-        </ul>
-    </div>
+<div class="section" id="8-chi-tiết-6-chế-độ-tạo-nội-dung">
+<h2 id="8-chi-tiết-6-chế-độ-tạo-nội-dung">8. Chi tiết 6 chế độ tạo nội dung</h2>
+<h3 id="81-tạo-ảnh">8.1 🖼️ Tạo Ảnh</h3>
+<ul>
+<li><strong>Input</strong>: Mô tả bằng chữ (prompt)</li>
+<li><strong>Output</strong>: Ảnh PNG/JPG</li>
+<li><strong>Khi nào dùng</strong>: Tạo concept art, mockup, minh họa từ mô tả</li>
+<li><strong>Các bước</strong>:<br />
+  1. Chọn model ảnh ở dropdown<br />
+  2. Chọn tỷ lệ khung hình<br />
+  3. Nhập prompt<br />
+  4. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Mẹo prompt</strong>: Viết tiếng Anh, thêm từ khóa phong cách như <code>photorealistic</code>, <code>anime style</code>, <code>watercolor</code>, <code>cinematic lighting</code></li>
+</ul>
+<h3 id="82-ảnh-đồng-nhất">8.2 👥 Ảnh đồng nhất</h3>
+<ul>
+<li><strong>Input</strong>: 1-10 ảnh nhân vật tham chiếu + prompt dùng alias <code>@nv1</code>, <code>@nv2</code></li>
+<li><strong>Output</strong>: Ảnh có nhân vật giữ nguyên khuôn mặt/trang phục</li>
+<li><strong>Khi nào dùng</strong>: Tạo series ảnh cùng nhân vật trong nhiều bối cảnh khác nhau</li>
+<li><strong>Các bước</strong>:<br />
+  1. Upload ảnh nhân vật (tối đa 10)<br />
+  2. Nhập prompt dùng alias (xem <a href="#9-tính-năng-tham-chiếu-nhân-vật-alias">Mục 9</a>)<br />
+  3. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Ví dụ</strong>: <code>@hero standing in a library, wearing glasses</code></li>
+</ul>
+<h3 id="83-video-đồng-nhất">8.3 🎞️ Video đồng nhất ⭐</h3>
+<ul>
+<li><strong>Input</strong>: 1-10 ảnh nhân vật + prompt dùng alias</li>
+<li><strong>Output</strong>: Video giữ nhân vật cố định xuyên suốt</li>
+<li><strong>Đặc biệt</strong>: Pass ảnh nhân vật <strong>trực tiếp</strong> vào video → nhanh hơn, chất lượng cao hơn, tiết kiệm credit</li>
+<li><strong>Khi nào dùng</strong>: Tạo video với nhân vật chuyển động giữ nguyên khuôn mặt/trang phục</li>
+<li><strong>Các bước</strong>:<br />
+  1. Upload ảnh nhân vật (tốt nhất là ảnh chụp chính diện, nét)<br />
+  2. Nhập prompt dùng alias, mô tả hành động<br />
+  3. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Mẹo</strong>: Ảnh tham chiếu càng rõ khuôn mặt và trang phục → video càng đồng nhất</li>
+<li><strong>Lưu ý</strong>: Chế độ này chỉ có <strong>chất lượng Fast</strong> (không có Quality) — đây là giới hạn từ Google</li>
+</ul>
+<h3 id="84-video-flow-chế-độ-mặc-định">8.4 🎬 Video Flow (chế độ mặc định)</h3>
+<ul>
+<li><strong>Input</strong>: Chỉ cần text prompt</li>
+<li><strong>Output</strong>: Video MP4 5-8 giây</li>
+<li><strong>Khi nào dùng</strong>: Chế độ <strong>dùng nhiều nhất</strong>, không cần ảnh tham chiếu</li>
+<li><strong>Các bước</strong>:<br />
+  1. Chọn Chất lượng (Fast hoặc Quality) + Tỷ lệ khung hình<br />
+  2. Nhập prompt (1 dòng = 1 video)<br />
+  3. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Mẹo prompt</strong>: Prompt tiếng Anh tốt nhất, dùng từ khóa phong cách như <code>cinematic</code>, <code>slow motion</code>, <code>drone shot</code>, <code>4K</code>, <code>golden hour</code></li>
+</ul>
+<h3 id="85-video-từ-ảnh">8.5 🎥 Video từ ảnh</h3>
+<ul>
+<li><strong>Input</strong>: 1 ảnh tĩnh + prompt mô tả chuyển động</li>
+<li><strong>Output</strong>: Video bắt đầu từ ảnh tĩnh, có chuyển động</li>
+<li><strong>Khi nào dùng</strong>: Biến 1 ảnh tĩnh thành video có chuyển động</li>
+<li><strong>Các bước</strong>:<br />
+  1. Upload 1 ảnh vào ô <strong>"Ảnh khung đầu"</strong><br />
+  2. Nhập prompt mô tả camera/nhân vật chuyển động ra sao<br />
+  3. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Ví dụ prompt</strong>: <code>camera slowly zooms in, character turns head to the right and smiles</code></li>
+</ul>
+<h3 id="86-nối-khung-hình">8.6 🔗 Nối khung hình</h3>
+<ul>
+<li><strong>Input</strong>: 2 ảnh (đầu + cuối) + prompt mô tả chuyển tiếp</li>
+<li><strong>Output</strong>: Video chuyển cảnh mượt giữa 2 ảnh</li>
+<li><strong>Khi nào dùng</strong>: Tạo hiệu ứng chuyển cảnh, morph, time-lapse giữa 2 keyframe</li>
+<li><strong>Các bước</strong>:<br />
+  1. Upload ảnh đầu vào ô <strong>"Ảnh khung đầu"</strong><br />
+  2. Upload ảnh cuối vào ô <strong>"Ảnh khung cuối"</strong><br />
+  3. Nhập prompt (tùy chọn) mô tả chuyển tiếp<br />
+  4. Bấm <strong>Bắt đầu</strong></li>
+<li><strong>Mẹo</strong>: 2 ảnh nên cùng tỷ lệ, cùng điều kiện ánh sáng để chuyển cảnh tự nhiên</li>
+</ul>
 </div>
 
-<!-- ======== 9. TIPS ======== -->
-<div class="section" id="tips">
-    <h2>9. Mẹo sử dụng</h2>
-    <ul class="tips-list">
-        <li><strong>Prompt tiếng Anh</strong> cho kết quả tốt hơn tiếng Việt rất nhiều</li>
-        <li><strong>Prompt càng chi tiết</strong> → video/ảnh càng chính xác với ý bạn muốn</li>
-        <li><strong>Veo 3.1 - Quality</strong> cho chất lượng cao nhất nhưng tạo chậm hơn (phù hợp sản phẩm cuối)</li>
-        <li><strong>Veo 3.1 - Fast</strong> cho tốc độ nhanh, chất lượng vẫn tốt — phù hợp test nhanh ý tưởng</li>
-        <li>Dùng <strong>16:9 ngang</strong> cho nội dung YouTube, <strong>9:16 dọc</strong> cho TikTok/Shorts/Reels</li>
-        <li>Nên có <strong>2-3 tài khoản Google</strong> để tăng tổng lượt tạo mỗi ngày</li>
-        <li>Dùng <strong>file TXT</strong> để nhập hàng loạt prompt cùng lúc — tiết kiệm rất nhiều thời gian</li>
-        <li>Sử dụng <strong>"✂ Ghép Video"</strong> để nối nhiều video ngắn thành 1 video dài hoàn chỉnh</li>
-    </ul>
+<div class="section" id="9-tính-năng-tham-chiếu-nhân-vật-alias">
+<h2 id="9-tính-năng-tham-chiếu-nhân-vật-alias">9. Tính năng tham chiếu Nhân vật (Alias)</h2>
+<p><em>(Áp dụng cho </em><em>👥 Ảnh đồng nhất</em><em> &amp; </em><em>🎞️ Video đồng nhất</em><em>)</em></p>
+<p>Đây là tính năng độc quyền cho phép bạn chèn <strong>nhiều nguồn tham chiếu</strong> character cùng lúc thay vì 1 ảnh.</p>
+<h3 id="cách-dùng-5-bước">Cách dùng — 5 bước</h3>
+<ol>
+<li>Tại cửa sổ <strong>ImageGrid</strong> của mode character, nhấp vào nút <strong>"+ Thêm Ảnh"</strong> (hoặc kéo thả file từ Explorer vào ô).</li>
+<li>Khi ảnh được nạp, NAV TOOLS sẽ <strong>tự động gán cho ảnh đó một Alias</strong> dạng: <code>@nv1</code> (nhân vật 1), tiếp theo là <code>@nv2</code>, <code>@nv3</code>...</li>
+<li>Bên dưới mỗi ảnh đều có <strong>ô nhập chữ sửa Alias</strong>. Bạn có thể click vào đổi thành tên tùy thích. VD: Đổi <code>@nv1</code> thành <code>@hero</code>, đổi <code>@nv2</code> thành <code>@dog</code>.</li>
+<li><strong>Trong ô nhập Prompt</strong>, gọi chính xác nhân vật bằng tag alias:<br />
+   - Dòng 1: <code>@hero is drinking coffee inside a pub</code><br />
+   - Dòng 2: <code>@dog is playing fetch outside in the green yard</code><br />
+   - Dòng 3: <code>@hero walks his @dog smoothly, cinematic panning shot</code></li>
+<li>Công cụ sẽ lấy đúng nguồn tham chiếu, đẩy sang backbone Google để render chính xác màu tóc/trang phục/khuôn mặt. Nhấn <strong>Bắt đầu</strong>!</li>
+</ol>
+<div class="alert alert-info"><p>💡 <strong>Lưu ý 1:</strong> Tính năng Alias <strong>chỉ có ở 2 chế độ</strong> 👥 Ảnh đồng nhất và 🎞️ Video đồng nhất. Các chế độ khác không dùng được.</p>
+<p>💡 <strong>Lưu ý 2:</strong> Khi bấm <strong>"+ Tạo task mới"</strong>, ảnh nhân vật sẽ được <strong>giữ lại</strong> — tiện cho bạn chạy tiếp batch prompt khác cùng nhân vật mà không cần upload lại.</p></div>
 </div>
 
-<!-- ======== 10. QUY TRÌNH VIDEO ĐỒNG NHẤT ======== -->
-<div class="section" id="workflow-char-video" style="border: 2px solid #f59e0b; background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);">
-    <h2>⭐ 10. Quy trình làm Video đồng nhất nhân vật</h2>
-    <p>Đây là quy trình <strong>chi tiết từng bước</strong> để tạo video có nhân vật giống nhau xuyên suốt — tính năng mạnh nhất của NAV TOOLS, giúp bạn tạo series video với cùng một nhân vật.</p>
+<div class="section" id="10-điều-khiển-hàng-đợi-ghép-video">
+<h2 id="10-điều-khiển-hàng-đợi-ghép-video">10. Điều khiển hàng đợi &amp; Ghép Video</h2>
+<p>Khi đang generate, bạn có thể tương tác với thanh <strong>Action Bar</strong> ở đáy panel giữa:</p>
+<h3 id="các-nút-điều-khiển">Các nút điều khiển</h3>
+<ul>
+<li><strong>⏸️ Tạm dừng</strong>: Sẽ <strong>không cắt ngang</strong> task đang "Generating" nhưng sẽ block các item còn PENDING không chạy tiếp.</li>
+<li><strong>▶️ Tiếp tục</strong>: Sau khi Pause, bấm để chạy tiếp các item PENDING.</li>
+<li><strong>⏹️ Dừng hẳn</strong>: Khai tử hoàn toàn lô việc. Không thể ấn tiếp tục sau khi đã bấm.</li>
+<li><strong>🔄 Làm lại lỗi (Retry)</strong>: Tool lướt toàn bộ bảng, quét những item bị ❌ ERROR (do captcha, mất kết nối, timeout 600s), chuyển về ⏳ PENDING rồi chạy lại theo đúng prompt &amp; cấu hình. <strong>Không đụng vào item đã ✅ COMPLETED.</strong></li>
+<li><strong>🔗 Ghép Video (Concat)</strong>: Khi có ít nhất 2 video đã <em>COMPLETED</em>, bật tính năng này. Máy sẽ dùng FFmpeg tự động lắp ghép tuần tự các video theo thứ tự tên, render ra file MP4 cuối cùng mang tên <code>{TaskName}_merged.mp4</code>. <em>(Yêu cầu FFmpeg trong PATH)</em></li>
+<li><strong>+ Tạo task mới</strong>: Xóa prompt list + task table hiện tại, <strong>giữ nguyên</strong> ảnh nhân vật và cấu hình → sẵn sàng chạy batch tiếp theo.</li>
+</ul>
+<h3 id="retry-từng-item-riêng">Retry từng item riêng</h3>
+<p>Ngoài nút Retry toàn bộ, bạn có thể <strong>hover chuột lên thumbnail</strong> của item bị lỗi → bấm icon <strong>🔄</strong> để retry <strong>chỉ 1 item đó</strong> (tiết kiệm credit so với retry cả batch).</p>
+</div>
 
-    <!-- Flowchart -->
-    <div style="background: #0f172a; border-radius: 12px; padding: 24px; margin: 20px 0; color: #e2e8f0; text-align: center;">
-        <div style="font-size: 13px; color: #94a3b8; margin-bottom: 16px;">📊 SƠ ĐỒ QUY TRÌNH</div>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; font-size: 13px;">
-            <span style="background: #1e40af; padding: 8px 14px; border-radius: 8px; font-weight: 600;">① Chuẩn bị ảnh<br>nhân vật</span>
-            <span style="color: #60a5fa;">→</span>
-            <span style="background: #1e40af; padding: 8px 14px; border-radius: 8px; font-weight: 600;">② Cấu hình<br>trong app</span>
-            <span style="color: #60a5fa;">→</span>
-            <span style="background: #1e40af; padding: 8px 14px; border-radius: 8px; font-weight: 600;">③ Upload ảnh<br>& đặt alias</span>
-            <span style="color: #60a5fa;">→</span>
-            <span style="background: #1e40af; padding: 8px 14px; border-radius: 8px; font-weight: 600;">④ Viết prompt<br>với @alias</span>
-            <span style="color: #60a5fa;">→</span>
-            <span style="background: #059669; padding: 8px 14px; border-radius: 8px; font-weight: 600;">⑤ Chạy &<br>Ghép video</span>
-        </div>
-    </div>
+<div class="section" id="11-quản-lý-tài-khoản-google">
+<h2 id="11-quản-lý-tài-khoản-google">11. Quản lý tài khoản Google</h2>
+<div class="screenshot">
+<img alt="Quản lý tài khoản Google" src="images/settings_accounts.png" />
+<div class="caption">Bảng quản lý — nút 🔄 Renew, toggle Enabled, nút ❌ Xóa ở cuối mỗi dòng</div>
+</div>
+<h3 id="111-khi-nào-cần-renew-session">11.1 Khi nào cần Renew Session?</h3>
+<p>Cookie Google có "tuổi thọ" khoảng <strong>7-15 ngày</strong>. Các triệu chứng cần renew:</p>
+<ul>
+<li>Cột <strong>"Cookie exp"</strong> trong bảng tài khoản hiển thị <strong>màu đỏ</strong> "Đã hết hạn"</li>
+<li>App báo lỗi <code>HTTP 401 Unauthorized</code> khi generate</li>
+<li>Cột <strong>Tier</strong> hoặc <strong>Credit</strong> hiển thị <code>—</code> bất thường</li>
+<li>Task chạy được nhưng cứ báo "Session expired" liên tục</li>
+</ul>
+<h3 id="112-cách-renew-session">11.2 Cách Renew Session</h3>
+<ol>
+<li>Vào <strong>⚙️ Cài đặt</strong> → tab <strong>Tài khoản Google</strong>.</li>
+<li>Chọn account cần renew → bấm nút <strong>🔄</strong> (Refresh/Renew Session).</li>
+<li>NAV TOOLS sẽ mở Chrome headless (không hiện lên), tự đăng nhập bằng cookies cũ, gọi Flow API lần nữa để cập nhật tier/credit/cookie_exp.</li>
+<li>Quá trình mất <strong>5-15 giây</strong>.</li>
+<li>✅ Thành công: Cột Cookies chuyển xanh, Tier/Credit cập nhật.</li>
+<li>❌ Thất bại "Session hết hạn": Cookies đã chết hẳn → phải <strong>xóa tài khoản</strong> và <strong>thêm lại</strong> từ <a href="#5-thêm-tài-khoản-google-vào-nav-tools">Mục 5</a>.</li>
+</ol>
+<h3 id="113-enable-disable-account">11.3 Enable / Disable account</h3>
+<p>Cột <strong>Enabled</strong> có thanh công tắc bật/tắt:<br />
+- <strong>Bật</strong>: Tài khoản tham gia pool round-robin<br />
+- <strong>Tắt</strong>: Tạm ngưng dùng tài khoản này (không xóa khỏi DB)</p>
+<p>VD: Tài khoản A hôm nay đã chạy quá nhiều video, bạn muốn "để dành" quota cho ngày mai → tắt công tắc → tài khoản A bị skip.</p>
+<h3 id="114-round-robin-xoay-tour-tự-động">11.4 Round-robin — xoay tour tự động</h3>
+<p>NAV TOOLS tự động xoay giữa các tài khoản đang <strong>Enabled</strong>. Khi tài khoản số 1 báo "Credit reached" → tự nhảy sang tài khoản số 2, v.v. Đây là lý do nên có <strong>3-5 tài khoản PAYGATE_TIER_TWO</strong> để chạy liên tục không gián đoạn.</p>
+<h3 id="115-xóa-tài-khoản">11.5 Xóa tài khoản</h3>
+<ul>
+<li>Chọn account trong bảng → bấm nút ❌ Xóa.</li>
+<li>Thao tác này cũng xóa luôn <strong>profile Chrome</strong> của tài khoản đó khỏi <code>.vidgen/browser_profiles/</code>.</li>
+</ul>
+</div>
 
-    <hr style="margin: 24px 0; border-color: #fde68a;">
+<div class="section" id="12-xử-lý-sự-cố-thường-gặp">
+<h2 id="12-xử-lý-sự-cố-thường-gặp">12. Xử lý sự cố thường gặp</h2>
+<h3 id="121-lỗi-khởi-động-app">12.1 Lỗi khởi động app</h3>
+<p><strong>❌ "Không chạy được, cửa sổ đóng ngay"</strong><br />
+- <strong>Windows SmartScreen</strong>: Bấm "More info" → "Run anyway".<br />
+- <strong>Thiếu VC++</strong>: Tải <code>vc_redist.x64.exe</code> mới nhất từ Microsoft.<br />
+- <strong>macOS Gatekeeper</strong>: Vào System Settings → Privacy &amp; Security → Allow anyway, hoặc chạy <code>xattr -cr &lt;duong-dan-toi-app&gt;</code>.</p>
+<p><strong>❌ "Lỗi hệ thống: Tham chiếu xác thực không hợp lệ"</strong><br />
+- Thiếu file cấu hình. Xử lý: Tắt app, tạo thư mục <code>.vidgen</code> cạnh file exe, bỏ file cấu hình Admin cung cấp vào → mở lại app.</p>
+<h3 id="122-lỗi-thêm-tài-khoản-google">12.2 Lỗi thêm tài khoản Google</h3>
+<p><strong>❌ Chrome không mở khi bấm "+ Thêm tài khoản"</strong><br />
+- Chrome chưa được cài. Tải tại <a href="https://www.google.com/chrome/">google.com/chrome</a>.</p>
+<p><strong>❌ Chrome mở rồi đóng ngay</strong><br />
+- Có Chrome khác đang chiếm profile lock. Tắt hết Chrome đang chạy → thử lại.</p>
+<p><strong>❌ Báo "Không tìm thấy email"</strong><br />
+- Bạn đóng Chrome trước khi login thành công. Thử lại và đảm bảo vào được trang Flow trước khi đóng.</p>
+<p><strong>❌ Thêm xong Tier = FREE</strong><br />
+- Tài khoản này chưa có quyền Veo 3.1 trả phí. Xem <a href="#24-cách-nâng-cấp-lên-paygate_tier_two">Mục 2.4</a> để upgrade.</p>
+<h3 id="123-lỗi-credit-quota">12.3 Lỗi Credit / Quota</h3>
+<p><strong>❌ "Credit reached" / "Quota exhausted"</strong><br />
+- Tài khoản đang dùng đã cạn credit ngày.<br />
+- <strong>Giải pháp</strong>:<br />
+  - Chờ <strong>reset credit</strong> (thường 00:00 UTC hoặc theo múi giờ Google).<br />
+  - Bật thêm tài khoản khác đã có sẵn (round-robin sẽ tự xoay).<br />
+  - Thêm mới 1 tài khoản <code>PAYGATE_TIER_TWO</code> (xem Mục 5).<br />
+  - Giảm chất lượng từ <code>Quality</code> xuống <code>Fast</code> để tiết kiệm credit.</p>
+<p><strong>❌ Tier hoặc Credit hiển thị <code>—</code></strong><br />
+- Session đã chết. Bấm <strong>🔄 Renew Session</strong> để cập nhật.</p>
+<h3 id="124-lỗi-prompt-bị-chặn">12.4 Lỗi Prompt bị chặn</h3>
+<p><strong>❌ "Prompt blocked vì policy violation" / "Generation unsafe"</strong></p>
+<p>AI của Google có bộ lọc chặt chẽ về:<br />
+- <strong>Violence (Bạo lực)</strong>: cảnh máu me, vũ khí, đánh nhau<br />
+- <strong>NSFW (Adults)</strong>: nội dung người lớn<br />
+- <strong>Ngôn từ thù hận</strong>, phân biệt, chính trị nhạy cảm<br />
+- <strong>Nhân vật có bản quyền</strong>: không được đặt tên cụ thể người nổi tiếng, nhân vật phim/truyện</p>
+<p><strong>Giải pháp</strong>:<br />
+- Viết lại prompt theo hướng trung tính hơn. VD:<br />
+  - ❌ <code>Elsa from Frozen walking</code> → ✅ <code>A woman with icy blue dress walking</code><br />
+  - ❌ <code>Gun firing bullets</code> → ✅ <code>A paintbrush stroking canvas</code><br />
+- Dùng <strong>🔄 Làm lại lỗi</strong> sau khi sửa prompt.</p>
+<h3 id="125-lỗi-runtime-crash">12.5 Lỗi runtime / crash</h3>
+<p><strong>❌ App bị sập khi đang chạy task hoặc khi đóng cửa sổ</strong><br />
+- Lỗi hiếm gặp khi xử lý nhiều task song song cùng lúc.<br />
+- <strong>Giải pháp</strong>: Khởi động lại ứng dụng. Task cũ vẫn nằm trong danh sách "Quản lý" → <strong>không mất dữ liệu</strong>, chạy lại dễ dàng.</p>
+<h3 id="126-cookie-hết-hạn-liên-tục">12.6 Cookie hết hạn liên tục</h3>
+<p><strong>❌ Cookie cứ hết hạn sau 1-2 ngày (bình thường phải 7-15 ngày)</strong><br />
+- Có thể do tài khoản Google đang được <strong>login đồng thời nhiều máy</strong> → Google bảo vệ cookie ngắn lại.<br />
+- <strong>Giải pháp</strong>: Chỉ dùng <strong>1 tài khoản cho 1 máy</strong>. Logout các thiết bị khác.</p>
+</div>
 
-    <!-- GIAI ĐOẠN 1 -->
-    <h3>📸 Giai đoạn 1 — Chuẩn bị ảnh nhân vật</h3>
-    <p>Chất lượng ảnh tham chiếu quyết định <strong>90% chất lượng video</strong>. Hãy chuẩn bị kỹ:</p>
+<div class="section" id="13-phụ-lục-thuật-ngữ-mẹo-tối-ưu">
+<h2 id="13-phụ-lục-thuật-ngữ-mẹo-tối-ưu">13. Phụ lục — Thuật ngữ &amp; Mẹo tối ưu</h2>
+<h3 id="131-thuật-ngữ">13.1 Thuật ngữ</h3>
+<table>
+<thead>
+<tr>
+<th>Thuật ngữ</th>
+<th>Nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tier</strong></td>
+<td>Loại tài khoản Veo 3.1: <code>FREE</code> (miễn phí, ~10 credit/ngày) hoặc <code>PAYGATE_TIER_TWO</code> (trả phí, ~300 credit/ngày)</td>
+</tr>
+<tr>
+<td><strong>Credit</strong></td>
+<td>Đơn vị quota để tạo video AI. Fast video = ~10 credit, Quality video = ~100 credit</td>
+</tr>
+<tr>
+<td><strong>Cookie / Session</strong></td>
+<td>Phiên đăng nhập Google đã được NAV TOOLS lưu lại. Tuổi thọ thường 7-15 ngày</td>
+</tr>
+<tr>
+<td><strong>Round-robin</strong></td>
+<td>Cơ chế NAV TOOLS tự xoay tour giữa các tài khoản Enabled khi tài khoản hiện tại cạn credit</td>
+</tr>
+<tr>
+<td><strong>Alias</strong></td>
+<td>Tag <code>@tên</code> gán cho ảnh nhân vật trong Ảnh/Video đồng nhất. VD: <code>@hero</code>, <code>@nv1</code></td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Mô tả bằng chữ để AI tạo video/ảnh. 1 dòng = 1 video/ảnh</td>
+</tr>
+</tbody>
+</table>
+<h3 id="132-mẹo-tối-ưu-credit">13.2 Mẹo tối ưu credit</h3>
+<ul>
+<li><strong>Dùng Fast cho test, Quality cho deliverable</strong>: Đừng phí credit Quality cho bản nháp</li>
+<li><strong>Prompt tiếng Anh</strong> hiệu quả hơn tiếng Việt — Google Veo train chủ yếu trên dataset tiếng Anh</li>
+<li><strong>Thêm từ khóa phong cách</strong> vào prompt: <code>cinematic</code>, <code>slow motion</code>, <code>4K</code>, <code>golden hour</code>, <code>drone shot</code>, <code>shallow depth of field</code></li>
+<li><strong>Retry chỉ item lỗi</strong> (nút 🔄 trên thumbnail) thay vì retry cả batch → tiết kiệm credit</li>
+<li><strong>Giữ ảnh nhân vật</strong> khi bấm "+ Tạo task mới" → không mất công upload lại cho batch kế tiếp</li>
+<li><strong>Chia batch nhỏ</strong> (10-20 prompt) để dễ pause/stop khi cần</li>
+<li><strong>Tắt tài khoản đã cạn</strong> thay vì cố chạy tiếp → tránh lãng phí lượt gọi</li>
+</ul>
+<h3 id="133-support">13.3 Support</h3>
+<ul>
+<li><strong>Admin contact</strong>: <em>(để trống — user tự điền)</em></li>
+<li><strong>Report lỗi</strong>: Kèm theo screenshot + đoạn log từ mục 📋 Logs trong app.</li>
+</ul>
+</div>
 
-    <div class="callout">
-        <h4>✅ Ảnh tốt nên có:</h4>
-        <ul>
-            <li>Rõ mặt, rõ nét, ánh sáng đều</li>
-            <li>Nền đơn giản (trắng / 1 màu) — AI nhận diện nhân vật tốt hơn</li>
-            <li>Nhân vật chiếm ít nhất 50% diện tích ảnh</li>
-            <li>Góc chụp thẳng mặt hoặc 3/4 (không che mặt, không quá nghiêng)</li>
-            <li>Định dạng: PNG hoặc JPG, kích thước tối thiểu 512x512 px</li>
-        </ul>
-    </div>
+<div class="section" id="14-lộ-trình-chi-tiết-tạo-video-đồng-nhất-nhân-vật">
+<h2 id="14-lộ-trình-chi-tiết-tạo-video-đồng-nhất-nhân-vật">⭐ 14. Lộ trình chi tiết: Tạo Video Đồng Nhất Nhân Vật</h2>
+<p>Đây là quy trình <strong>chi tiết từng bước</strong> để tạo video có nhân vật giống nhau xuyên suốt — tính năng mạnh nhất của NAV TOOLS, giúp bạn tạo series video dài với cùng một nhân vật.</p>
+<h3 id="sơ-đồ-quy-trình">📊 Sơ đồ quy trình</h3>
+<pre><code class="language-text">① Chuẩn bị ảnh    →    ② Cấu hình      →    ③ Upload ảnh     →    ④ Viết prompt    →    ⑤ Chạy &amp; Ghép
+   nhân vật              trong app             &amp; đặt alias           với @alias            video
+</code></pre>
 
-    <div class="alert alert-warning">
-        ⚠️ <strong>TRÁNH:</strong> Ảnh mờ, ảnh nhóm nhiều người, ảnh có chữ/logo lớn, ảnh quá tối hoặc quá sáng. Những ảnh này khiến AI khó nhận diện nhân vật.
-    </div>
+<h3 id="giai-đoạn-1-chuẩn-bị-ảnh-nhân-vật">📸 Giai đoạn 1 — Chuẩn bị ảnh nhân vật</h3>
+<p>Chất lượng ảnh tham chiếu quyết định <strong>90% chất lượng video</strong>. Hãy chuẩn bị kỹ:</p>
+<p><strong>✅ Ảnh tốt nên có:</strong><br />
+- Rõ mặt, rõ nét, ánh sáng đều<br />
+- Nền đơn giản (trắng / 1 màu) — AI nhận diện nhân vật tốt hơn<br />
+- Nhân vật chiếm ít nhất 50% diện tích ảnh<br />
+- Góc chụp thẳng mặt hoặc 3/4 (không che mặt, không quá nghiêng)<br />
+- Định dạng: PNG hoặc JPG, kích thước tối thiểu 512x512 px</p>
+<div class="alert alert-warning"><p>⚠️ <strong>TRÁNH:</strong> Ảnh mờ, ảnh nhóm nhiều người, ảnh có chữ/logo lớn, ảnh quá tối hoặc quá sáng. Những ảnh này khiến AI khó nhận diện nhân vật.</p>
+<p>💡 <strong>Mẹo pro:</strong> Nếu chưa có ảnh nhân vật, bạn có thể dùng chế độ <strong>"🖼️ Tạo Ảnh"</strong> để tạo ảnh nhân vật trước, rồi dùng ảnh đó làm tham chiếu cho video! (Tạo ảnh <strong>không trừ credit video</strong> nên thoải mái thử nghiệm).</p></div>
 
-    <div class="alert alert-info">
-        💡 <strong>Mẹo pro:</strong> Nếu chưa có ảnh nhân vật, bạn có thể dùng chế độ <strong>"Tạo Ảnh"</strong> để tạo ảnh nhân vật trước, rồi dùng ảnh đó làm tham chiếu cho video!
-    </div>
+<h3 id="giai-đoạn-2-cấu-hình-trong-app">⚙️ Giai đoạn 2 — Cấu hình trong app</h3>
+<p><strong>Bước 1:</strong> Mở app → chọn tab <strong>"🎞️ Video đồng nhất"</strong> ở thanh bên trái.</p>
+<p><strong>Bước 2:</strong> Chọn <strong>chất lượng video</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Chất lượng</th>
+<th>Thời gian / video</th>
+<th>Khuyến nghị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Veo 3.1 - Fast</code></td>
+<td>⭐⭐ Tốt</td>
+<td>~1-2 phút</td>
+<td>Mặc định — cân bằng giữa tốc độ và chất lượng</td>
+</tr>
+<tr>
+<td><code>Veo 3.1 - Quality</code></td>
+<td>⭐⭐⭐ Cao nhất</td>
+<td>~2-4 phút</td>
+<td>Sản phẩm cuối (áp dụng cho các chế độ khác)</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><p>💡 <strong>Lưu ý:</strong> Chế độ <strong>Video đồng nhất</strong> chỉ có chất lượng Fast — đây là giới hạn từ Google. Nhưng chất lượng Fast của Video đồng nhất vẫn rất cao, đủ dùng cho sản phẩm cuối.</p></div>
+<p><strong>Bước 3:</strong> Chọn <strong>tỷ lệ khung hình</strong>:<br />
+- <strong>16:9 Ngang</strong> — cho YouTube, website, thuyết trình<br />
+- <strong>9:16 Dọc</strong> — cho TikTok, Shorts, Reels, Story<br />
+- <strong>1:1 Vuông</strong> — cho Instagram, Facebook</p>
+<p><strong>Bước 4:</strong> Chọn <strong>thư mục lưu</strong> — nhấn biểu tượng 📂 để chọn nơi lưu video khi tạo xong.</p>
+<p><strong>Bước 5:</strong> Cài <strong>"Đồng thời"</strong> = <code>1</code> (khuyến nghị). Tăng lên 2-3 nếu bạn có nhiều tài khoản Google.</p>
 
-    <hr style="margin: 24px 0; border-color: #fde68a;">
+<h3 id="giai-đoạn-3-upload-ảnh-nhân-vật-đặt-alias">📤 Giai đoạn 3 — Upload ảnh nhân vật &amp; Đặt alias</h3>
+<p><strong>Bước 1:</strong> Ở phần <strong>"Nhân vật tham chiếu 0/10"</strong>, nhấn nút <strong>"+ Thêm"</strong>.</p>
+<p><strong>Bước 2:</strong> Chọn ảnh nhân vật từ máy tính (PNG, JPG, WEBP). Có thể chọn nhiều ảnh cùng lúc. <strong>Tối đa 10 nhân vật</strong>.</p>
+<p><strong>Bước 3:</strong> <strong>Đặt tên (alias)</strong> cho mỗi nhân vật. App sẽ <strong>tự động gán</strong> alias dạng <code>@nv1</code>, <code>@nv2</code>... Bạn có thể click vào ô nhập dưới ảnh để đổi thành tên dễ nhớ:</p>
+<table>
+<thead>
+<tr>
+<th>Alias mặc định</th>
+<th>→ Gợi ý đổi thành</th>
+<th>Ví dụ nhân vật</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@nv1</code></td>
+<td><code>@boy</code></td>
+<td>Cậu bé tóc đen</td>
+</tr>
+<tr>
+<td><code>@nv2</code></td>
+<td><code>@girl</code></td>
+<td>Cô bé tóc dài</td>
+</tr>
+<tr>
+<td><code>@nv3</code></td>
+<td><code>@dad</code></td>
+<td>Người bố</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-success"><p>📌 <strong>Lưu ý quan trọng:</strong> Alias phải là <strong>1 từ duy nhất</strong>, không dấu cách, không ký tự đặc biệt. VD: <code>boy</code> ✅, <code>cau be</code> ❌, <code>bé-trai</code> ❌</p></div>
 
-    <!-- GIAI ĐOẠN 2 -->
-    <h3>⚙️ Giai đoạn 2 — Cấu hình trong app</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Mở app → chọn tab <strong>"🎞️ Video đồng nhất"</strong> ở thanh bên trái</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Chọn <strong>chất lượng video</strong>:
-            <table>
-                <tr><th>Tùy chọn</th><th>Chất lượng</th><th>Thời gian / video</th><th>Khuyến nghị</th></tr>
-                <tr><td><code>Veo 3.1 - Quality</code></td><td>⭐⭐⭐ Cao nhất</td><td>~2-4 phút</td><td>Sản phẩm cuối cùng</td></tr>
-                <tr><td><code>Veo 3.1 - Fast</code></td><td>⭐⭐ Tốt</td><td>~1-2 phút</td><td>Test nhanh ý tưởng</td></tr>
-                <tr><td><code>Veo 3.1 - Lite</code></td><td>⭐ Cơ bản</td><td>~30 giây</td><td>Test thử, tốn ít credit</td></tr>
-            </table>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">Chọn <strong>tỷ lệ khung hình</strong>:
-            <ul>
-                <li><strong>16:9 Ngang</strong> — cho YouTube, website, thuyết trình</li>
-                <li><strong>9:16 Dọc</strong> — cho TikTok, Shorts, Reels, Story</li>
-                <li><strong>1:1 Vuông</strong> — cho Instagram, Facebook</li>
-            </ul>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Chọn <strong>thư mục lưu</strong> — nhấn biểu tượng 📂 để chọn nơi lưu video khi tạo xong</div>
-    </div>
-    <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content">Cài <strong>"Đồng thời"</strong> = <code>1</code> (khuyến nghị). Tăng lên 2-3 nếu bạn có nhiều tài khoản Google.</div>
-    </div>
-
-    <hr style="margin: 24px 0; border-color: #fde68a;">
-
-    <!-- GIAI ĐOẠN 3 -->
-    <h3>📤 Giai đoạn 3 — Upload ảnh nhân vật & Đặt alias</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Ở phần <strong>"Nhân vật tham chiếu 0/10"</strong>, nhấn nút <strong>"+ Thêm"</strong></div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Chọn ảnh nhân vật từ máy tính (PNG, JPG, WEBP). Có thể chọn nhiều ảnh cùng lúc. <strong>Tối đa 10 nhân vật.</strong></div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content"><strong>Đặt tên (alias)</strong> cho mỗi nhân vật. App sẽ <strong>tự động gán cho ảnh đó một Alias</strong> tĩnh (ví dụ <code>@nv1</code>, <code>@nv2</code>,...). Tuy nhiên, bên dưới mỗi ảnh đều có ô nhập chữ để bạn tự do đổi thành tên dễ nhớ:
-            <table>
-                <tr><th>Alias mặc định</th><th>→ Gợi ý đổi thành</th><th>Ví dụ nhân vật</th></tr>
-                <tr><td><code>@nv1</code></td><td><code>@boy</code></td><td>Cậu bé tóc đen</td></tr>
-                <tr><td><code>@nv2</code></td><td><code>@girl</code></td><td>Cô bé tóc dài</td></tr>
-                <tr><td><code>@nv3</code></td><td><code>@dad</code></td><td>Người bố</td></tr>
-            </table>
-        </div>
-    </div>
-
-    <div class="alert alert-info">
-        📌 <strong>Lưu ý quan trọng:</strong> Alias phải là <strong>1 từ duy nhất</strong>, không dấu cách, không ký tự đặc biệt. Ví dụ: <code>boy</code> ✅, <code>cau be</code> ❌, <code>bé-trai</code> ❌
-    </div>
-
-    <hr style="margin: 24px 0; border-color: #fde68a;">
-
-    <!-- GIAI ĐOẠN 4 -->
-    <h3>✍️ Giai đoạn 4 — Viết prompt với @alias</h3>
-
-    <p>Đây là bước quan trọng nhất! Dùng <code>@alias</code> trong prompt để chỉ định nhân vật nào xuất hiện trong video.</p>
-
-    <div style="background: #0f172a; border-radius: 12px; padding: 20px; margin: 16px 0;">
-        <div style="color: #94a3b8; font-size: 12px; margin-bottom: 8px;">📝 VÍ DỤ PROMPT — Câu chuyện "Ngày đi học"</div>
-        <pre style="margin: 0; background: transparent;"><code style="color: #e2e8f0;">@boy wakes up in the morning, stretching in bed, sunlight through window
+<h3 id="giai-đoạn-4-viết-prompt-với-alias">✍️ Giai đoạn 4 — Viết prompt với @alias</h3>
+<p>Đây là bước quan trọng nhất! Dùng <code>@alias</code> trong prompt để chỉ định nhân vật nào xuất hiện trong video.</p>
+<p><strong>📝 Ví dụ prompt — Câu chuyện "Ngày đi học":</strong></p>
+<pre><code class="language-text">@boy wakes up in the morning, stretching in bed, sunlight through window
 @boy eating breakfast at the kitchen table, smiling happily
 @boy walking to school with a backpack, cherry blossom petals falling
 @boy sitting in classroom, raising hand to answer a question
 @boy playing with @girl in the school playground during recess
-@boy and @girl walking home together at sunset, laughing</code></pre>
-    </div>
+@boy and @girl walking home together at sunset, laughing
+</code></pre>
+<p><strong>📐 Quy tắc viết prompt hiệu quả:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Quy tắc</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bắt đầu bằng <code>@alias</code></td>
+<td><code>@boy is running in the park</code> ✅</td>
+</tr>
+<tr>
+<td>Mô tả hành động cụ thể</td>
+<td><code>@girl dancing on stage</code> ✅ (thay vì <code>@girl on stage</code> ❌)</td>
+</tr>
+<tr>
+<td>Thêm bối cảnh, ánh sáng</td>
+<td><code>@boy reading a book in a cozy library, warm golden light</code> ✅</td>
+</tr>
+<tr>
+<td>Dùng tiếng Anh</td>
+<td>AI hiểu tiếng Anh tốt hơn → kết quả đẹp hơn</td>
+</tr>
+<tr>
+<td>Nhiều nhân vật = nhiều @alias</td>
+<td><code>@boy and @girl playing chess together</code> ✅</td>
+</tr>
+<tr>
+<td>Mỗi dòng = 1 video</td>
+<td>10 dòng prompt = 10 video riêng biệt</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-warning"><p>⚠️ <strong>Những điều cần tránh:</strong><br />
+- Prompt quá ngắn (dưới 5 từ) → video sẽ mờ hoặc không rõ nội dung<br />
+- Dùng alias chưa upload ảnh → app sẽ báo lỗi<br />
+- Viết <code>@alias</code> sai tên (phân biệt HOA/thường) → nhân vật sẽ không xuất hiện</p></div>
 
-    <div class="callout">
-        <h4>📐 Quy tắc viết prompt hiệu quả</h4>
-        <table>
-            <tr><th style="width:200px">Quy tắc</th><th>Ví dụ</th></tr>
-            <tr><td>Bắt đầu bằng <code>@alias</code></td><td><code>@boy is running in the park</code> ✅</td></tr>
-            <tr><td>Mô tả hành động cụ thể</td><td><code>@girl dancing on stage</code> ✅ (thay vì chỉ <code>@girl on stage</code> ❌)</td></tr>
-            <tr><td>Thêm bối cảnh, ánh sáng</td><td><code>@boy reading a book in a cozy library, warm golden light</code> ✅</td></tr>
-            <tr><td>Dùng tiếng Anh</td><td>AI hiểu tiếng Anh tốt hơn → kết quả đẹp hơn</td></tr>
-            <tr><td>Nhiều nhân vật = dùng nhiều @alias</td><td><code>@boy and @girl playing chess together</code> ✅</td></tr>
-            <tr><td>Mỗi dòng = 1 video</td><td>10 dòng prompt = 10 video riêng biệt</td></tr>
-        </table>
-    </div>
+<h3 id="giai-đoạn-5-chạy-tạo-video-ghép-thành-phẩm">🚀 Giai đoạn 5 — Chạy tạo video &amp; Ghép thành phẩm</h3>
+<p><strong>Bước 1:</strong> Kiểm tra lại tất cả cài đặt, ảnh nhân vật, và danh sách prompt.</p>
+<p><strong>Bước 2:</strong> Nhấn nút <strong>▶ Bắt đầu tạo</strong>.</p>
+<p><strong>Bước 3:</strong> <strong>Chờ quá trình tạo video</strong>. Bảng bên phải sẽ hiện trạng thái:<br />
+- <code>PENDING</code> → Đang chờ<br />
+- <code>GENERATING</code> → Đang tạo (mất 1-4 phút tùy chất lượng)<br />
+- <code>COMPLETED</code> → ✅ Xong! Hover vào thumbnail để play hoặc mở folder<br />
+- <code>ERROR</code> → ❌ Lỗi — hover thumbnail → bấm 🔄 retry hoặc dùng nút "Làm lại lỗi" toàn bộ</p>
+<p><strong>Bước 4:</strong> Sau khi tất cả video hoàn tất, nếu muốn ghép thành <strong>1 video dài</strong> → nhấn nút <strong>✂ Ghép Video</strong> ở đáy panel giữa.</p>
+<p><strong>Bước 5:</strong> Video ghép sẽ được lưu vào thư mục bạn đã chọn 🎉</p>
+<div class="alert alert-success"><p>✅ <strong>Xong!</strong> Bạn đã có video hoàn chỉnh với nhân vật đồng nhất xuyên suốt.</p></div>
 
-    <div class="alert alert-warning">
-        ⚠️ <strong>Những điều cần tránh:</strong>
-        <ul style="margin-top: 6px; margin-bottom: 0;">
-            <li>Viết prompt quá ngắn (ít hơn 5 từ) → video sẽ mờ hoặc không rõ nội dung</li>
-            <li>Dùng alias chưa upload ảnh → app sẽ báo lỗi</li>
-            <li>Viết @alias sai tên (phân biệt HOA/thường) → nhân vật sẽ không xuất hiện</li>
-        </ul>
-    </div>
-
-    <hr style="margin: 24px 0; border-color: #fde68a;">
-
-    <!-- GIAI ĐOẠN 5 -->
-    <h3>🚀 Giai đoạn 5 — Chạy tạo video & Ghép thành phẩm</h3>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">Kiểm tra lại tất cả cài đặt, ảnh nhân vật, và danh sách prompt</div>
-    </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">Nhấn nút <strong style="background: #ea580c; color: white; padding: 4px 12px; border-radius: 6px;">▶ Bắt đầu tạo</strong></div>
-    </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content"><strong>Chờ quá trình tạo video.</strong> Bảng bên phải sẽ hiện trạng thái:
-            <ul>
-                <li><span style="background: #475569; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">PENDING</span> → Đang chờ</li>
-                <li><span style="background: #2563eb; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">GENERATING</span> → Đang tạo (mất 1-4 phút tùy chất lượng)</li>
-                <li><span style="background: #16a34a; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">COMPLETED</span> → Xong! Nhấn link ở cột "Video" để xem</li>
-                <li><span style="background: #dc2626; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">ERROR</span> → Lỗi — nhấn "Làm lại lỗi" để thử lại</li>
-            </ul>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">Sau khi tất cả video hoàn tất, nếu muốn ghép thành <strong>1 video dài</strong> → nhấn nút <strong style="background: #2563eb; color: white; padding: 4px 12px; border-radius: 6px;">✂ Ghép Video</strong> ở dưới cùng</div>
-    </div>
-    <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content">Video ghép sẽ được lưu vào thư mục bạn đã chọn 🎉</div>
-    </div>
-
-    <div class="alert alert-success">
-        ✅ <strong>Xong!</strong> Bạn đã có video hoàn chỉnh với nhân vật đồng nhất xuyên suốt.
-    </div>
-
-    <hr style="margin: 24px 0; border-color: #fde68a;">
-
-    <!-- VÍ DỤ THỰC TẾ -->
-    <h3>🎯 Ví dụ thực tế: Tạo video kể chuyện "Chuyến du lịch biển"</h3>
-
-    <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 12px; padding: 20px 24px; margin: 16px 0;">
-        <p style="margin-bottom: 12px;"><strong>Nhân vật:</strong></p>
-        <table>
-            <tr><th>Alias</th><th>Ảnh</th><th>Mô tả</th></tr>
-            <tr><td><code>@mai</code></td><td>Ảnh cô gái tóc dài mặc áo trắng</td><td>Nhân vật chính (cô gái)</td></tr>
-            <tr><td><code>@huy</code></td><td>Ảnh chàng trai tóc ngắn</td><td>Nhân vật phụ (bạn trai)</td></tr>
-        </table>
-
-        <p style="margin-top: 16px; margin-bottom: 8px;"><strong>Cấu hình:</strong> Veo 3.1 - Quality | 16:9 Ngang | Đồng thời: 1</p>
-
-        <p style="margin-top: 16px; margin-bottom: 8px;"><strong>Danh sách prompt (6 video):</strong></p>
-        <pre><code>@mai packing a suitcase in her bedroom, excited expression, morning light
+<h3 id="ví-dụ-thực-tế-video-kể-chuyện-chuyến-du-lịch-biển">🎯 Ví dụ thực tế: Video kể chuyện "Chuyến du lịch biển"</h3>
+<p><strong>Nhân vật:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Ảnh</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@mai</code></td>
+<td>Ảnh cô gái tóc dài mặc áo trắng</td>
+<td>Nhân vật chính (cô gái)</td>
+</tr>
+<tr>
+<td><code>@huy</code></td>
+<td>Ảnh chàng trai tóc ngắn</td>
+<td>Nhân vật phụ (bạn trai)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cấu hình:</strong> <code>Veo 3.1 - Fast</code> | <code>16:9 Ngang</code> | Đồng thời: <code>1</code></p>
+<p><strong>Danh sách prompt (6 video):</strong></p>
+<pre><code class="language-text">@mai packing a suitcase in her bedroom, excited expression, morning light
 @mai and @huy driving a car on a coastal road, ocean view, sunny day
 @mai walking barefoot on white sand beach, waves crashing, wind in hair
 @huy building a sandcastle on the beach, @mai watching and laughing
 @mai and @huy watching sunset at the beach, sitting together on the sand
-@mai looking at vacation photos on phone, smiling nostalgically, cozy room at night</code></pre>
+@mai looking at vacation photos on phone, smiling nostalgically, cozy room at night
+</code></pre>
+<p><strong>Kết quả:</strong> 6 video × ~8 giây = video kể chuyện ~48 giây sau khi ghép 🎬</p>
 
-        <p style="margin-top: 12px;"><strong>Kết quả:</strong> 6 video × ~8 giây = video kể chuyện ~48 giây sau khi ghép 🎬</p>
-    </div>
+<h3 id="bộ-prompt-mẫu-sẵn-làm-series-dài-cực-dễ">📦 Bộ prompt mẫu sẵn — Làm series dài cực dễ</h3>
+<p>Copy thẳng các bộ prompt bên dưới, chỉ cần đổi <code>@nhân_vật</code> theo ảnh bạn upload:</p>
+<p><strong>📚 Series "Ngày của học sinh" (6 video)</strong></p>
+<pre><code class="language-text">@student waking up early, rubbing eyes, bedroom with morning sunlight
+@student brushing teeth in the bathroom, wearing pajamas
+@student having breakfast with family, kitchen setting, warm light
+@student cycling to school on a sunny road, backpack on shoulder
+@student studying in classroom, focused expression, textbooks open
+@student playing football with friends after school, golden hour
+</code></pre>
+<p><strong>👨‍👩‍👧 Series "Bữa cơm gia đình" (5 video)</strong></p>
+<pre><code class="language-text">@mom cooking in a modern kitchen, steam rising from the pot
+@dad reading newspaper at dining table, coffee in hand
+@kid helping @mom set the table, smiling
+@mom @dad @kid sitting together for dinner, candles lit, cozy atmosphere
+@kid laughing while telling a story at the dinner table, warm family scene
+</code></pre>
+<p><strong>🏃 Series "Chạy bộ buổi sáng" (5 video)</strong></p>
+<pre><code class="language-text">@runner tying shoelaces on front porch, early morning light
+@runner stretching in the park, mist rising from the grass
+@runner jogging along a tree-lined path, autumn leaves falling
+@runner drinking water by a fountain, breathing heavily
+@runner celebrating at the finish, arms raised, sunshine behind
+</code></pre>
+<p><strong>🎂 Series "Sinh nhật" (6 video)</strong></p>
+<pre><code class="language-text">@birthday_kid waking up excited, balloons floating in bedroom
+@birthday_kid opening presents in the living room, colorful wrapping paper
+@mom bringing a birthday cake with candles, smiling
+@birthday_kid blowing out candles, family cheering around
+@birthday_kid playing with friends at the party, laughter and confetti
+@birthday_kid hugging @mom at the end of the day, peaceful night scene
+</code></pre>
+<p><strong>💼 Series "Một ngày làm việc" (5 video)</strong></p>
+<pre><code class="language-text">@worker arriving at modern office building, coffee in hand, morning city view
+@worker typing on laptop at desk, focused expression, large monitor
+@worker in a meeting room presenting to colleagues, confident gesture
+@worker having lunch with @colleague at a cafe, casual conversation
+@worker walking home at sunset, city lights starting to glow
+</code></pre>
 
-    <hr style="margin: 24px 0; border-color: #fde68a;">
+<h3 id="pro-tips-nâng-cao-chất-lượng">🏆 Pro Tips — Nâng cao chất lượng</h3>
+<ul>
+<li>💡 <strong>Ảnh tham chiếu quyết định 90% chất lượng.</strong> Đầu tư thời gian chọn ảnh đẹp, rõ nét.</li>
+<li>💡 <strong>Test trước với Fast</strong> rồi mới chạy Quality (ở các chế độ khác). Tiết kiệm credit khi prompt chưa hoàn hảo.</li>
+<li>💡 <strong>Giữ phong cách nhất quán.</strong> Nếu video 1 là "cinematic, warm tone" thì các video còn lại nên có cùng style.</li>
+<li>💡 <strong>Thêm chi tiết ánh sáng &amp; camera.</strong> VD: <code>golden hour lighting, medium close-up shot</code> → video cinematic hơn.</li>
+<li>💡 <strong>Dùng "Làm lại lỗi"</strong> nếu có prompt bị lỗi — đôi khi chỉ cần chạy lại là thành công.</li>
+<li>💡 <strong>Ghép video theo thứ tự</strong> bằng nút "✂ Ghép Video" để có câu chuyện mạch lạc.</li>
+<li>💡 <strong>Không quá 2-3 nhân vật / video.</strong> Nhiều nhân vật hơn sẽ khiến AI khó giữ nhất quán.</li>
+<li>💡 <strong>Dùng nút "+ Tạo task mới"</strong> để chạy batch kế tiếp cùng nhân vật — ảnh character được giữ lại.</li>
+</ul>
 
-    <!-- PRO TIPS -->
-    <h3>🏆 Pro Tips — Nâng cao chất lượng</h3>
-
-    <ul class="tips-list">
-        <li><strong>Ảnh tham chiếu quyết định 90% chất lượng.</strong> Đầu tư thời gian chọn ảnh đẹp, rõ nét sẽ cho kết quả tốt hơn nhiều</li>
-        <li><strong>Test trước với Fast/Lite</strong> rồi mới chạy Quality. Tiết kiệm credit đáng kể khi prompt chưa hoàn hảo</li>
-        <li><strong>Giữ prompt nhất quán phong cách.</strong> Nếu video 1 là "cinematic, warm tone" thì tất cả video nên có cùng style</li>
-        <li><strong>Thêm chi tiết ánh sáng & camera.</strong> Ví dụ: <code>golden hour lighting, medium close-up shot</code> → video cinematic hơn</li>
-        <li><strong>Dùng "Làm lại lỗi"</strong> nếu có prompt bị lỗi — đôi khi chỉ cần chạy lại là thành công</li>
-        <li><strong>Ghép video theo thứ tự</strong> bằng nút "✂ Ghép Video" để có câu chuyện mạch lạc</li>
-        <li><strong>Không quá 2-3 nhân vật / video.</strong> Nhiều nhân vật hơn sẽ khiến AI khó giữ nhất quán</li>
-    </ul>
+<p><em>© NAV TOOLS 2026 — Sản phẩm phục vụ tự động hóa nội dung đa phương tiện.</em></p>
 </div>
 
-<!-- ======== FOOTER ======== -->
+</div>
+
 <div class="footer">
-    <p><strong>NAV TOOLS</strong> v1.0.0 — Powered by Google Veo 3.1 & Imagen</p>
-    <p>© 2026 eKids • Liên hệ Admin để được hỗ trợ</p>
+    © NAV TOOLS 2026 — Sản phẩm phục vụ tự động hóa nội dung đa phương tiện.
 </div>
 
-</div>
 </body>
 </html>
