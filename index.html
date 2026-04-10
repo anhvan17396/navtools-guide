@@ -238,6 +238,40 @@
         font-size: 13px;
     }
 
+    .video-demo {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .video-demo h2 {
+        font-family: 'Manrope', sans-serif;
+        color: #f1f5f9;
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    .video-demo .video-subtitle {
+        color: #94a3b8;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border: none;
+        border-radius: 12px;
+    }
+
     @media print {
         body { background: white; font-size: 12px; }
         .header { page-break-after: avoid; padding: 30px; }
@@ -255,6 +289,14 @@
 </div>
 
 <div class="container">
+
+<div class="video-demo">
+<h2>🎥 Video Demo — NAV TOOLS in Action</h2>
+<p class="video-subtitle">Xem nhanh cách NAV TOOLS hoạt động trước khi bắt đầu cài đặt</p>
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/QPYqFvhbXek?start=44" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
 
 <div class="top-warning"><p><strong>Dành cho:</strong> Người dùng tạo video/ảnh AI hàng loạt tự động</p>
 <p>⚠️ <strong>ĐỌC TRƯỚC KHI CÀI:</strong> NAV TOOLS <strong>BẮT BUỘC</strong> cần tài khoản Google đã đăng ký Veo 3.1 tại <a href="https://labs.google/fx">labs.google/fx</a>. App <strong>KHÔNG tự cung cấp credit AI</strong> — credit trừ trên tài khoản Google của bạn. Đọc kỹ <strong><a href="#2-yêu-cầu-tài-khoản-veo-31-đọc-trước-khi-cài">Mục 2 — Yêu cầu tài khoản VEO 3.1</a></strong> trước khi tiếp tục.</p></div>
@@ -335,6 +377,12 @@
 <td>~300 credit/ngày</td>
 <td>✅ Dùng cho sản xuất hàng loạt</td>
 </tr>
+<tr>
+<td><strong><code>Veo3 Ultra</code></strong></td>
+<td>Tài khoản Google AI Ultra (gói cao nhất)</td>
+<td>~25.000 credit</td>
+<td>🚀 Dùng thoải mái, sản xuất quy mô lớn</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Chi phí credit thực tế:</strong><br />
@@ -343,9 +391,10 @@
 - <strong>Tạo ảnh</strong>: ✅ <strong>Không trừ credit Veo</strong> — bạn có thể tạo ảnh thoải mái mà không ảnh hưởng quota video. Credit video chỉ dùng cho các chế độ sinh video.</p>
 <p><strong>Tính toán nhanh (credit Veo cho video):</strong><br />
 - FREE (10 credit/ngày) = 1 video Fast/ngày, <strong>không</strong> thể tạo video Quality<br />
-- PAYGATE_TIER_TWO (300 credit/ngày) = ~30 video Fast hoặc ~3 video Quality/ngày</p>
+- PAYGATE_TIER_TWO (300 credit/ngày) = ~30 video Fast hoặc ~3 video Quality/ngày<br />
+- <strong>Veo3 Ultra (25.000 credit)</strong> = thoải mái sản xuất không lo hết credit. Hiện thị trường bán tài khoản Ultra cũng khá rẻ — đầu tư 1 lần dùng thoải mái.</p>
 <div class="alert alert-warning"><p>💡 <strong>Tin vui về ảnh:</strong> Chế độ <strong>🖼️ Tạo Ảnh</strong> và <strong>👥 Ảnh đồng nhất</strong> <strong>không trừ vào quota Veo 3.1</strong>. Bạn có thể tạo ảnh hàng loạt thoải mái. Chỉ 4 chế độ video (🎬 Video Flow, 🎞️ Video đồng nhất, 🎥 Video từ ảnh, 🔗 Nối khung hình) mới bị trừ credit Veo.</p>
-<p>⚠️ <strong>Kết luận:</strong> Tài khoản FREE <strong>gần như không dùng video thực tế được</strong> — chỉ để test. Muốn sản xuất video thực sự, bạn BẮT BUỘC phải có tài khoản <code>PAYGATE_TIER_TWO</code>. Nếu chỉ dùng để tạo ảnh → FREE tier vẫn OK.</p></div>
+<p>⚠️ <strong>Kết luận:</strong> Tài khoản FREE <strong>gần như không dùng video thực tế được</strong> — chỉ để test. Muốn sản xuất video thực sự, bạn cần tối thiểu <code>PAYGATE_TIER_TWO</code>. Muốn thoải mái không lo credit → nên sắm <strong>Veo3 Ultra (25K credit)</strong>. Nếu chỉ dùng để tạo ảnh → FREE tier vẫn OK.</p></div>
 <h3 id="23-kiểm-tra-tài-khoản-có-quyền-veo-31-chưa-checklist">2.3 Kiểm tra tài khoản có quyền Veo 3.1 chưa — Checklist</h3>
 <p>Làm theo 8 bước sau trước khi cài NAV TOOLS:</p>
 <ol>
